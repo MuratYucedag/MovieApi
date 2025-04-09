@@ -1,0 +1,39 @@
+﻿<div class="login-wrapper" id="login-content">
+	<div class="login-content">
+		<a href="#" class="close">x</a>
+		<h3>Giriş Yap</h3>
+		<form method="post" action="#">
+			<div class="row">
+				<label for="username">
+					Kullanıcı Adı:
+					<input type="text" name="username" id="username" placeholder="Örnek Kullaıcı..." pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+				</label>
+			</div>
+
+			<div class="row">
+				<label for="password">
+					Şifreniz:
+					<input type="password" name="password" id="password" placeholder="******" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+				</label>
+			</div>
+			<div class="row">
+				<div class="remember">
+					<div>
+						<input type="checkbox" name="remember" value="Remember me"><span>Beni Hatırla</span>
+					</div>
+					<a href="#">Şifremi Unuttum ?</a>
+				</div>
+			</div>
+			<div class="row">
+				<button type="submit">Giriş Yap</button>
+			</div>
+		</form>
+		<div class="row">
+			<p>Veya Sosyal Medya</p>
+			<div class="social-btn-2">
+				<a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
+				<a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
+			</div>
+		</div>
+	</div>
+</div>

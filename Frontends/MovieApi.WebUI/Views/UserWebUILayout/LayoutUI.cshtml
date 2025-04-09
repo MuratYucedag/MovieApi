@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+
+<!-- movielist07:38-->
+@await Component.InvokeAsync("_UserLayoutWebUIHeadComponentPartial")
+
+<body>
+
+	@await Component.InvokeAsync("_UserLayoutWebUIPreloaderComponentPartial")
+
+
+	<!--end of preloading-->
+	<!--login form popup-->
+	@await Component.InvokeAsync("_UserLayoutWebUILoginModalComponentPartial")
+
+	
+	<!--end of login form popup-->
+	<!--signup form popup-->
+	@await Component.InvokeAsync("_UserLayoutWebUIRegisterModalComponentPartial")
+	
+	<!--end of signup form popup-->
+	<!-- BEGIN | Header -->
+	@await Component.InvokeAsync("_UserLayoutWebUINavbarComponentPartial")
+	
+
+	<!-- END | Header -->
+	@await Component.InvokeAsync("_UserLayoutWebUIHeroComponentPartial")
+	
+	
+	@RenderBody()
+
+	
+	<!-- footer section-->
+	@await Component.InvokeAsync("_UserLayoutWebUIFooterComponentPartial")
+
+	<!-- end of footer section-->
+
+	<script src="/Film-Review-Movie-Database/js/jquery.js"></script>
+	<script src="/Film-Review-Movie-Database/js/plugins.js"></script>
+	<script src="/Film-Review-Movie-Database/js/plugins2.js"></script>
+	<script src="/Film-Review-Movie-Database/js/custom.js"></script>
+</body>
+
+<!-- movielist07:38-->
+</html>
