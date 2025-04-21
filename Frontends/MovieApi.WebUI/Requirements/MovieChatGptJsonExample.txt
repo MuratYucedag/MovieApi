@@ -1,0 +1,102 @@
+﻿[
+  {
+    "title": "The Shawshank Redemption",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    "rating": 9.3,
+    "description": "Masum bir adamın Shawshank hapishanesindeki umut, arkadaşlık ve özgürlük mücadelesini anlatan efsanevi bir dram. Andy ve Red’in dostluğu her izleyicinin kalbine dokunur.",
+    "duration": 142,
+    "releaseDate": "1994-09-23T00:00:00.000Z",
+    "createdYear": "1994",
+    "status": true
+  },
+  {
+    "title": "The Godfather",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "rating": 9.2,
+    "description": "Mafya ailesi Corleone'nin yükselişi ve dönüşümünü konu alan bu klasik, gücün, sadakatin ve ihanetin sinema tarihindeki en etkileyici anlatımlarından birini sunar.",
+    "duration": 175,
+    "releaseDate": "1972-03-24T00:00:00.000Z",
+    "createdYear": "1972",
+    "status": true
+  },
+  {
+    "title": "Inception",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+    "rating": 8.8,
+    "description": "Rüyaların içinde rüya görme fikri üzerine kurulu bu bilim kurgu filmi, bilinçaltının derinliklerinde geçen aksiyon dolu bir yolculuğu konu alır. Christopher Nolan’dan çığır açıcı bir başyapıt.",
+    "duration": 148,
+    "releaseDate": "2010-07-16T00:00:00.000Z",
+    "createdYear": "2010",
+    "status": true
+  },
+  {
+    "title": "Interstellar",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+    "rating": 8.6,
+    "description": "Dünya yaşanamaz hale gelirken, bir grup astronot soluk arayışıyla galaksiler arası bir yolculuğa çıkar. Zaman, sevgi ve fedakarlık üzerine epik bir bilim kurgu destanı.",
+    "duration": 169,
+    "releaseDate": "2014-11-07T00:00:00.000Z",
+    "createdYear": "2014",
+    "status": true
+  },
+  {
+    "title": "Fight Club",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg",
+    "rating": 8.8,
+    "description": "Toplumun dayattığı normlara karşı çıkan bir adam ve onun alter egosu, yeraltı dövüş kulübüyle özgürlüğü arar. David Fincher’ın kült klasiği izleyiciyi düşündürmeye zorluyor.",
+    "duration": 139,
+    "releaseDate": "1999-10-15T00:00:00.000Z",
+    "createdYear": "1999",
+    "status": true
+  },
+  {
+    "title": "Forrest Gump",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+    "rating": 8.8,
+    "description": "Forrest Gump’ın saf ama sevgi dolu bakış açısıyla, 20. yüzyılın en önemli olaylarına tanık olacaksınız. Hayatın bir kutu çikolataya benzediğini unutmayın!",
+    "duration": 142,
+    "releaseDate": "1994-07-06T00:00:00.000Z",
+    "createdYear": "1994",
+    "status": true
+  },
+  {
+    "title": "The Dark Knight",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "rating": 9.0,
+    "description": "Gotham’ın karanlık sokaklarında Joker’le karşı karşıya gelen Batman, kahramanlığın ve fedakarlığın sınırlarını zorluyor. Aksiyon ve psikoloji bu filmde zirveye çıkıyor.",
+    "duration": 152,
+    "releaseDate": "2008-07-18T00:00:00.000Z",
+    "createdYear": "2008",
+    "status": true
+  },
+  {
+    "title": "The Matrix",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+    "rating": 8.7,
+    "description": "Gerçekliğin sorgulandığı bu cyberpunk filmde, Neo adlı bir adam, dünyayı kontrol eden simülasyon sistemine karşı savaş açar. Matrix’i bir kez izlemek asla yetmez.",
+    "duration": 136,
+    "releaseDate": "1999-03-31T00:00:00.000Z",
+    "createdYear": "1999",
+    "status": true
+  },
+  {
+    "title": "Pulp Fiction",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+    "rating": 8.9,
+    "description": "Quentin Tarantino’nun ikonik filmi, birbirinden bağımsız ama sonunda birbirine bağlanan hikayeleriyle kara mizahı ve suç dünyasını sinema tarihine kazır.",
+    "duration": 154,
+    "releaseDate": "1994-10-14T00:00:00.000Z",
+    "createdYear": "1994",
+    "status": true
+  },
+  {
+    "title": "Gladiator",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+    "rating": 8.5,
+    "description": "Roma İmparatorluğu döneminde geçen bu epik filmde, generallikten gladyatörlüğe sürüklenen Maximus’un intikam ve onur mücadelesi destansı bir sinema deneyimi sunar.",
+    "duration": 155,
+    "releaseDate": "2000-05-05T00:00:00.000Z",
+    "createdYear": "2000",
+    "status": true
+  }
+]

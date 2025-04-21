@@ -1,0 +1,102 @@
+﻿[
+  {
+    "title": "Breaking Bad",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+    "rating": 9.5,
+    "description": "Kimya öğretmeni Walter White’ın uyuşturucu imparatorluğuna dönüşen hayatı. Ahlaki çizgilerin giderek silikleştiği, sürükleyici bir suç ve dram serisi.",
+    "duration": 47,
+    "releaseDate": "2008-01-20T00:00:00.000Z",
+    "createdYear": "2008",
+    "status": true
+  },
+  {
+    "title": "Game of Thrones",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
+    "rating": 9.3,
+    "description": "Taht kavgaları, ejderhalar ve entrikalarla dolu Westeros dünyasında geçen, epik bir fantastik drama. Güç için verilen mücadele asla kolay değildir.",
+    "duration": 57,
+    "releaseDate": "2011-04-17T00:00:00.000Z",
+    "createdYear": "2011",
+    "status": true
+  },
+  {
+    "title": "Stranger Things",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg",
+    "rating": 8.7,
+    "description": "1980’lerin nostaljik atmosferinde geçen bu bilim kurgu dizisi, kaybolan bir çocuğun ardından gelişen doğaüstü olayları konu alıyor. Upside Down dünyası sizi bekliyor.",
+    "duration": 51,
+    "releaseDate": "2016-07-15T00:00:00.000Z",
+    "createdYear": "2016",
+    "status": true
+  },
+  {
+    "title": "The Crown",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/ltvV7fLWQ6d4r3coX1T2l7aYFNj.jpg",
+    "rating": 8.6,
+    "description": "Kraliçe II. Elizabeth’in tahta çıkışından günümüze kadar olan yaşamını ve İngiliz kraliyet ailesinin perde arkasını dramatik bir anlatımla gözler önüne seriyor.",
+    "duration": 58,
+    "releaseDate": "2016-11-04T00:00:00.000Z",
+    "createdYear": "2016",
+    "status": true
+  },
+  {
+    "title": "The Office (US)",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/qWnJzyZhyy74gjpSjIXWmuk0ifX.jpg",
+    "rating": 8.9,
+    "description": "Scranton'daki bir kağıt şirketinde çalışanların absürt ve komik hayatını konu alan mockumentary tarzı sitcom. Michael Scott karakteriyle unutulmaz anlar yaşatıyor.",
+    "duration": 22,
+    "releaseDate": "2005-03-24T00:00:00.000Z",
+    "createdYear": "2005",
+    "status": true
+  },
+  {
+    "title": "Sherlock",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/f9zGxLHGyQB10cMDZNY5ZcGKhZi.jpg",
+    "rating": 9.1,
+    "description": "Modern Londra'da geçen Sherlock Holmes uyarlaması, zekice yazılmış senaryosu ve Benedict Cumberbatch’in muhteşem oyunculuğuyla izleyicileri büyülüyor.",
+    "duration": 88,
+    "releaseDate": "2010-07-25T00:00:00.000Z",
+    "createdYear": "2010",
+    "status": true
+  },
+  {
+    "title": "The Mandalorian",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+    "rating": 8.8,
+    "description": "Star Wars evreninde geçen bu dizide, yalnız bir ödül avcısı olan Mando'nun Baby Yoda ile kurduğu bağ, galaksiler arası bir yolculuğa dönüşüyor.",
+    "duration": 40,
+    "releaseDate": "2019-11-12T00:00:00.000Z",
+    "createdYear": "2019",
+    "status": true
+  },
+  {
+    "title": "Dark",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
+    "rating": 8.8,
+    "description": "Almanya'nın küçük bir kasabasında geçen bu gizem dolu dizi, zaman yolculuğu, aile sırları ve evrenin döngüsel yapısıyla beyin yakan bir deneyim sunuyor.",
+    "duration": 53,
+    "releaseDate": "2017-12-01T00:00:00.000Z",
+    "createdYear": "2017",
+    "status": true
+  },
+  {
+    "title": "Chernobyl",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+    "rating": 9.4,
+    "description": "1986’da Ukrayna’daki Çernobil nükleer felaketini konu alan mini dizi, olayın arka planındaki ihmalleri ve trajik sonuçlarını çarpıcı şekilde gözler önüne seriyor.",
+    "duration": 70,
+    "releaseDate": "2019-05-06T00:00:00.000Z",
+    "createdYear": "2019",
+    "status": true
+  },
+  {
+    "title": "Peaky Blinders",
+    "coverImageUrl": "https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+    "rating": 8.8,
+    "description": "Birinci Dünya Savaşı sonrası Birmingham’da geçen dizi, Peaky Blinders adlı çetenin yükselişini ve lideri Tommy Shelby’nin zekice hamlelerini anlatıyor.",
+    "duration": 60,
+    "releaseDate": "2013-09-12T00:00:00.000Z",
+    "createdYear": "2013",
+    "status": true
+  }
+]
