@@ -1,0 +1,54 @@
+
+html.semi-dark .sidebar-wrapper,
+html.semi-dark .sidebar-wrapper .sidebar-header {
+
+    background-color: #181818;
+
+}
+
+
+html.semi-dark .sidebar-wrapper, 
+html.semi-dark .sidebar-wrapper .sidebar-header {
+
+    border-right: 1px solid #181818;
+
+}
+
+html.semi-dark .sidebar-wrapper .sidebar-header {
+    border-bottom: 0px solid rgb(255 255 255 / 12%);
+}
+
+
+html.semi-dark .sidebar-wrapper .sidebar-header .logo-text,
+html.semi-dark .sidebar-wrapper .sidebar-header .toggle-icon {
+    color: #fcfcfc;
+}
+
+
+html.semi-dark .sidebar-wrapper .metismenu ul {
+    background-color: rgb(255 255 255 / 4%);
+    border: 1px solid rgb(255 255 255 / 12%);
+}
+
+
+html.semi-dark .sidebar-wrapper .metismenu a {
+    color: rgb(255 255 255 / 50%);
+}
+
+html.semi-dark .sidebar-wrapper .metismenu .mm-active>a, html.semi-dark .sidebar-wrapper .metismenu a:active, html.semi-dark .sidebar-wrapper .metismenu a:focus, html.semi-dark .sidebar-wrapper .metismenu a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgb(255 255 255 / 12%);
+}
+
+
+html.semi-dark .sidebar-wrapper .sidebar-header img {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+html.semi-dark .sidebar-wrapper .simplebar-scrollbar:before {
+	background: rgba(255, 255, 255, .4)
+}
+
+
+

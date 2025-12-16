@@ -1,0 +1,26 @@
+﻿Design a modern, cinematic login page for a movie and TV series streaming and review website.
+
+The theme should feel premium and immersive, inspired by cinema and streaming platforms.
+Use a dark mode color palette with deep blacks, dark blues, and subtle red or gold accent colors.
+
+Layout requirements:
+- Centered login card with soft rounded corners and a slight glassmorphism effect
+- Large cinematic background image (blurred movie theater or film strip aesthetic)
+- Platform logo at the top (movie reel or play icon style)
+- Welcome headline such as: "Welcome Back to CineVerse" or "Sign in to explore movies & series"
+- Email and password input fields with modern icons
+- Primary login button with a bold accent color
+- "Forgot password?" link
+- "Sign up" call-to-action for new users
+- Optional social login buttons (Google, Apple) styled minimally
+
+Typography:
+- Modern sans-serif font
+- Strong hierarchy with a bold headline and clean form labels
+
+UX details:
+- Smooth hover and focus animations
+- Subtle shadows and depth
+- Clean, uncluttered layout suitable for desktop and mobile
+
+The design should feel like a professional streaming platform login page focused on movies, TV series, and user reviews.

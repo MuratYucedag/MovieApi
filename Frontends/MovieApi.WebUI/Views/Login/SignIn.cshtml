@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CineVerse Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee79",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+    <!-- Background Layer -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <!-- Cinematic Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[6px] scale-105 opacity-60" data-alt="Blurred cinematic movie theater background with dark ambient lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgoelXUaWuX2yqGDsmBu7uWQx0St3E60SIodN8KTxgpDUtF8HRBTQDGNtpcSYJKADJFzrTs63sIzzb_vJy08BORzOuQuDbwwPDaqpkENRtYA48V53nHWzzBQABia1Xn5lfTStfZXIkxAHZkD19aPTqCd5NdQpNQbu2Wf559rquy2zJmLeswSxl1cvB33iKclFj5j5QRppM3ePYNElGLtrlH8-tas99PdlchbjipTkQaphd5Ko8e8kTipgJQ30yyr7wwiV0CGLZ4Xxz');">
+        </div>
+        <!-- Gradient Overlay for Depth -->
+        <div class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/70 to-background-dark/95 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <!-- Login Container -->
+    <div class="relative z-10 w-full max-w-[400px] flex flex-col gap-6">
+        <!-- Logo & Header Section -->
+        <div class="flex flex-col items-center text-center space-y-4 pt-4">
+            <div class="h-16 w-16 rounded-full bg-gradient-to-tr from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center shadow-[0_0_15px_rgba(43,238,121,0.2)] backdrop-blur-sm">
+                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+            </div>
+            <div>
+                <h1 class="text-white text-3xl font-bold tracking-tight mb-2">Welcome Back</h1>
+                <p class="text-gray-400 text-sm font-normal">Enter your credentials to access your watchlist.</p>
+            </div>
+        </div>
+        <!-- Glassmorphism Card -->
+        <div class="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6 ring-1 ring-white/5">
+            <!-- Input Fields -->
+            <div class="space-y-5">
+                <!-- Email Field -->
+                <div class="group">
+                    <label class="block text-primary/80 text-xs font-semibold mb-2 uppercase tracking-wider ml-1">Email Address</label>
+                    <div class="relative flex items-center">
+                        <input class="w-full bg-black/40 text-white placeholder-gray-500 border border-white/10 rounded-xl px-4 py-4 pl-12 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all duration-300" placeholder="user@cineverse.com" type="email" />
+                        <span class="material-symbols-outlined absolute left-4 text-gray-400 group-focus-within:text-primary transition-colors">mail</span>
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="group">
+                    <div class="flex justify-between items-center mb-2 ml-1">
+                        <label class="block text-primary/80 text-xs font-semibold uppercase tracking-wider">Password</label>
+                        <a class="text-xs text-gray-400 hover:text-white transition-colors" href="#">Forgot password?</a>
+                    </div>
+                    <div class="relative flex items-center">
+                        <input class="w-full bg-black/40 text-white placeholder-gray-500 border border-white/10 rounded-xl px-4 py-4 pl-12 pr-12 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all duration-300" placeholder="••••••••" type="password" />
+                        <span class="material-symbols-outlined absolute left-4 text-gray-400 group-focus-within:text-primary transition-colors">lock</span>
+                        <button class="absolute right-4 text-gray-500 hover:text-white focus:outline-none flex items-center" type="button">
+                            <span class="material-symbols-outlined text-[20px]">visibility</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Login Button -->
+            <button class="w-full bg-primary hover:bg-[#25d66d] active:scale-[0.98] text-background-dark font-bold text-lg py-4 rounded-full shadow-[0_4px_20px_rgba(43,238,121,0.25)] transition-all duration-200 flex items-center justify-center gap-2">
+                Log In
+                <span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+            </button>
+            <!-- Social Login -->
+            <div class="relative py-2">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-white/10"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <span class="bg-[#151c18] bg-opacity-80 px-4 text-xs text-gray-500">Or continue with</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button class="flex items-center justify-center gap-2 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-colors group">
+                    <img alt="Google" class="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Google G logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJDInNNxpBTIbq-xp0Fg3bNIVAKWz_u_LfdKyx5VjIaBYHctnZENrf97aEj7ftx61WYses6nk909fji-IPW0twxDretsfG4wrvchgD0drM5RX_QppxZMlDcef57pC72uSh2DL-Vj_v8LOQ13RgOD2xqysgjLK51hPd9JrB-g8v5jHkrg3MozoNRbHyQwx7uIqBpQI8wZLiWOw9z91-E0-iD8kHiWbzVaDQIloLPOKlMFvHMCucHM6TP7vuoeT3R1-QMPC3t4rF6eCp" />
+                    <span class="text-white text-sm font-medium">Google</span>
+                </button>
+                <button class="flex items-center justify-center gap-2 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-colors group">
+                    <span class="material-symbols-outlined text-white text-[22px]">ios</span>
+                    <span class="text-white text-sm font-medium">Apple</span>
+                </button>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="text-center">
+            <p class="text-gray-400 text-sm">
+                New to CineVerse?
+                <a class="text-primary hover:text-white font-semibold transition-colors ml-1" href="#">Sign up now</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

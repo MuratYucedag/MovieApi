@@ -1,0 +1,297 @@
+
+
+html.color-header .toggle-icon {
+    color: #fcfcfc;
+}
+
+html.color-header .toggle-icon:hover {
+    color: #fcfcfc;
+    background-color: rgb(255 255 255 / 25%);
+}
+
+
+html.color-header .top-header .navbar .top-navbar-right .nav-item {
+	background-color: rgb(255 255 255 / 0%);
+}
+
+html.color-header .top-header .navbar .top-navbar-right .nav-item:hover {
+     background-color: rgb(255 255 255 / 25%);
+}
+
+html.color-header .top-header .navbar .navbar-nav .nav-link {
+	color: #fff
+}
+
+html.color-header .top-header, html.color-header .top-header .topbar-logo-header {
+    border-right: 1px solid rgb(255 255 255 / 15%);
+}
+
+html.color-header .top-header .topbar-logo-header img {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+html.color-header .top-header .mobile-menu-button {
+    color: #fcfcfc;
+}
+
+
+
+html.color-header .top-header .navbar .searchbar .search-icon,
+html.color-header .top-header .navbar .searchbar .search-close-icon {
+	color: #1a2232;
+}
+
+
+html.color-header .top-header .navbar .user-name {
+    color: #1a2232;
+}
+html.color-header .searchbar input {
+	color: #413f3f!important;
+	background-color: #fff!important;
+	border: 1px solid rgb(241 241 241)!important;
+	box-shadow: inset 0 1px 2px rgb(0 0 0 / 0%)
+}
+html.color-header .searchbar input:focus {
+	box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .30)!important
+}
+html.color-header .searchbar input::placeholder {
+	color: #08090a!important;
+	opacity: .5!important
+}
+html.color-header::placeholder {
+	color: #08090a!important;
+	opacity: .5!important
+}
+html.color-header .search-show {
+	color: #221f1f
+}
+html.color-header .user-info .user-name {
+	color: #fff
+}
+html.color-header .user-info .designattion {
+	color: #fff
+}
+html.color-header .user-box {
+	border-right: 1px solid rgb(255 255 255 / .35)!important
+}
+html.color-header .mobile-toggle-menu {
+	color: #fff
+}
+
+.switcher-body .headercolor1 {
+	background-image: linear-gradient(
+310deg,#7928ca,#ff0080);
+}
+.switcher-body .headercolor2 {
+	background-image: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%);
+}
+.switcher-body .headercolor3 {
+	background-image: linear-gradient( 
+310deg,#17ad37,#98ec2d);
+}
+.switcher-body .headercolor4 {
+	background: linear-gradient(to right, rgb(238, 9, 121), rgb(255, 106, 0));
+}
+.switcher-body .headercolor5 {
+	background-image: linear-gradient(rgb(42, 245, 152) 0%, rgb(0, 158, 253) 100%);
+}
+.switcher-body .headercolor6 {
+	background: linear-gradient(to right, rgb(247, 151, 30), rgb(255, 210, 0));
+}
+.switcher-body .headercolor7 {
+	background-image: linear-gradient(
+-20deg, #0c0f14 0%, #1a2232 100%);
+}
+.switcher-body .headercolor8 {
+	background: linear-gradient(to right, rgb(52, 148, 230), rgb(236, 110, 173));
+}
+
+
+html.headercolor1 .top-header{
+	background-image: linear-gradient(
+310deg,#7928ca,#ff0080);
+}
+html.headercolor2 .top-header{
+	background-image: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%);
+}
+html.headercolor3 .top-header {
+	background-image: linear-gradient( 
+310deg,#17ad37,#98ec2d);
+}
+html.headercolor4 .top-header {
+	background: linear-gradient(to right, rgb(238, 9, 121), rgb(255, 106, 0));
+}
+html.headercolor5 .top-header {
+	background-image: linear-gradient(rgb(42, 245, 152) 0%, rgb(0, 158, 253) 100%);
+}
+html.headercolor6 .top-header {
+	background: linear-gradient(to right, rgb(247, 151, 30), rgb(255, 210, 0));
+}
+html.headercolor7 .top-header {
+	background-image: linear-gradient( -20deg, #0c0f14 0%, #1a2232 100%);
+}
+html.headercolor8 .top-header {
+	background: linear-gradient(to right, rgb(52, 148, 230), rgb(236, 110, 173));
+}
+
+
+
+/* sidebar color */
+
+html.color-sidebar .mini-sidebar-wrapper{
+	background-color: #171717;
+    border-left: 1px solid rgb(228 228 228 / 0%);
+}
+
+html.color-sidebar .mini-sidebar-header{
+	background-color: transparent;
+    border-left: 1px solid #e4e4e400;
+    border-bottom: 1px solid rgb(255 255 255 / 15%);
+	position: absolute;
+}
+
+html.color-sidebar .toggle-menu-wrapper .toggle-menu-button {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgb(255 255 255 / 12%);
+}
+
+html.color-sidebar body.mini-toggled .wrapper .mini-sidebar-wrapper .toggle-menu-wrapper .toggle-menu-button {
+	color: #4c5258;
+	background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+
+
+
+html.color-sidebar .mini-sidebar-wrapper .toggle-menu-wrapper {
+	border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+html.color-sidebar .mini-sidebar-navigation .nav-pills .nav-link.active, html.color-sidebar .mini-sidebar-navigation .nav-pills .show>.nav-link {
+	color: #ffffff;
+    background-color: rgb(255 255 255 / 16%);
+}
+
+html.color-sidebar .nav-pills .nav-link {
+	color: #ffffff;
+}
+
+
+html.color-sidebar .logo-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+html.color-sidebar .menu-label{
+	color: rgb(255 255 255 / 65%);
+}
+
+html.color-sidebar .mini-sidebar-wrapper .mini-sidebar-header .logo-text {
+    color: #ffffff;
+}
+
+html.color-sidebar .mini-sidebar-wrapper .mini-sidebar-header .toggle-icon {
+    color: #ffffff;
+}
+
+html.color-sidebar .simplebar-scrollbar:before {
+	background: rgba(255, 255, 255, .4)
+}
+
+html.color-sidebar .mini-sidebar-wrapper .metismenu .mm-active>a, html.color-sidebar .mini-sidebar-wrapper .metismenu a:active, html.color-sidebar .mini-sidebar-wrapper .metismenu a:focus, html.color-sidebar .mini-sidebar-wrapper .metismenu a:hover {
+    color: #fff;
+    text-decoration: none;
+    background: rgb(255 255 255 / 18%);
+}
+
+html.color-sidebar .mini-sidebar-wrapper .metismenu a {
+    color: rgb(255 255 255 / 85%);
+}
+
+html.color-sidebar .mini-sidebar-wrapper .metismenu ul {
+    border: 1px solid #ffffff00;
+    background: rgb(255 255 255 / 8%);
+}
+
+
+html.color-sidebar .mini-sidebar-wrapper {
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.switcher-body .sidebarcolor1 {
+	background-image: linear-gradient(
+310deg,#7928ca,#ff0080);
+}
+.switcher-body .sidebarcolor2 {
+	background-image: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%);
+}
+.switcher-body .sidebarcolor3 {
+	background-image: linear-gradient( 
+310deg,#17ad37,#98ec2d);
+}
+.switcher-body .sidebarcolor4 {
+	background: linear-gradient(to right, rgb(238, 9, 121), rgb(255, 106, 0));
+}
+.switcher-body .sidebarcolor5 {
+	background-image: linear-gradient(rgb(42, 245, 152) 0%, rgb(0, 158, 253) 100%);
+}
+.switcher-body .sidebarcolor6 {
+	background: linear-gradient(to right, rgb(247, 151, 30), rgb(255, 210, 0));
+}
+.switcher-body .sidebarcolor7 {
+	background-image: linear-gradient(
+-20deg, #0c0f14 0%, #1a2232 100%);
+}
+.switcher-body .sidebarcolor8 {
+	background: linear-gradient(to right, rgb(52, 148, 230), rgb(236, 110, 173));
+}
+
+
+
+
+html.color-sidebar.sidebarcolor1 .mini-sidebar-wrapper {
+    background-image: linear-gradient(
+310deg,#7928ca,#ff0080);
+}
+
+html.color-sidebar.sidebarcolor2 .mini-sidebar-wrapper {
+    background-image: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%);
+}
+
+html.color-sidebar.sidebarcolor3 .mini-sidebar-wrapper {
+    background-image: linear-gradient( 
+310deg,#17ad37,#98ec2d);
+}
+
+html.color-sidebar.sidebarcolor4 .mini-sidebar-wrapper {
+    background: linear-gradient(to right, rgb(238, 9, 121), rgb(255, 106, 0));
+}
+
+html.color-sidebar.sidebarcolor5 .mini-sidebar-wrapper {
+    background-image: linear-gradient(rgb(42, 245, 152) 0%, rgb(0, 158, 253) 100%);
+}
+
+html.color-sidebar.sidebarcolor6 .mini-sidebar-wrapper {
+    background: linear-gradient(to right, rgb(247, 151, 30), rgb(255, 210, 0));
+}
+
+html.color-sidebar.sidebarcolor7 .mini-sidebar-wrapper {
+    background-image: linear-gradient(
+-20deg, #0c0f14 0%, #1a2232 100%);
+}
+
+html.color-sidebar.sidebarcolor8 .mini-sidebar-wrapper {
+    background: linear-gradient(to right, rgb(52, 148, 230), rgb(236, 110, 173));
+}
+
+
+
+
+
+
+
