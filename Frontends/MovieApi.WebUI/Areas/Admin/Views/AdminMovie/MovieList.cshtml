@@ -1,0 +1,232 @@
+﻿@model List<AdminResultMovieDto>
+@{
+    ViewData["Title"] = "Film Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    :root {
+        --primary: #6366f1;
+        --success: #10b981;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --bg-soft: #f8fafc;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --radius: 12px;
+    }
+
+    .admin-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .admin-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .admin-search {
+        position: relative;
+        max-width: 320px;
+        width: 100%;
+    }
+
+        .admin-search input {
+            width: 100%;
+            padding: 10px 14px 10px 40px;
+            border-radius: var(--radius);
+            border: 1px solid #e5e7eb;
+            background: var(--bg-soft);
+        }
+
+        .admin-search ion-icon {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+    .btn-primary-soft {
+        background: var(--primary);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+    }
+
+    .movie-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 8px;
+    }
+
+        .movie-table thead th {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 8px 12px;
+        }
+
+        .movie-table tbody tr {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,.03);
+        }
+
+        .movie-table tbody td {
+            padding: 14px 12px;
+            vertical-align: middle;
+            color: var(--text-dark);
+        }
+
+    .movie-id {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .rating-pill {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        display: inline-flex;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .status-pill {
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+        .status-pill.active {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .status-pill.passive {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+    .action-btn {
+        padding: 8px 14px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .btn-delete {
+        background: var(--danger);
+    }
+
+    .btn-update {
+        background: var(--success);
+    }
+
+    .btn-detail {
+        background: var(--warning);
+    }
+
+    @@media(max - width:768px) {
+        .movie-table thead
+
+    {
+        display: none;
+    }
+
+    }
+</style>
+
+<div class="admin-card">
+    <div class="admin-header">
+        <div class="admin-title">
+            🎬 Film Listesi
+        </div>
+
+        <div class="admin-search">
+            <ion-icon name="search-outline"></ion-icon>
+            <input type="text" placeholder="Film ara..." />
+        </div>
+
+        <a href="#" class="btn-primary-soft">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            Yeni Film
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="movie-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Film Adı</th>
+                    <th>Rating</th>
+                    <th>Yıl</th>
+                    <th>Durum</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Detay</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><div class="movie-id">@item.MovieId</div></td>
+                        <td><strong>@item.Title</strong></td>
+                        <td>
+                            <span class="rating-pill">
+                                ⭐ @item.Rating
+                            </span>
+                        </td>
+                        <td>@item.CreatedYear</td>
+                        <td>
+                            <span class="status-pill @(item.Status ? "active" : "passive")">
+                                @(item.Status ? "AKTİF" : "PASİF")
+                            </span>
+                        </td>
+                        <td><a href="#" class="action-btn btn-delete">Sil</a></td>
+                        <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
+                        <td><a href="#" class="action-btn btn-detail">Detay</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

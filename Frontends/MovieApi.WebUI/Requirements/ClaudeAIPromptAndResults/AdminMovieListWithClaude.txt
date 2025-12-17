@@ -1,0 +1,543 @@
+﻿@model List<AdminResultMovieDto>
+@{
+    ViewData["Title"] = "MovieList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    .modern-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .page-title::before {
+        content: "🎬";
+        font-size: 2rem;
+    }
+
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 3rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: #f9fafb;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #3b82f6;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6b7280;
+        font-size: 1.25rem;
+    }
+
+    .btn-add-new {
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn-add-new:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        color: white;
+    }
+
+    .modern-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .modern-table thead th {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: none;
+    }
+
+    .modern-table thead th:first-child {
+        border-top-left-radius: 12px;
+    }
+
+    .modern-table thead th:last-child {
+        border-top-right-radius: 12px;
+    }
+
+    .modern-table tbody tr {
+        background: white;
+        transition: all 0.2s ease;
+    }
+
+    .modern-table tbody tr:hover {
+        background: #f9fafb;
+        transform: scale(1.01);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .modern-table tbody td {
+        padding: 1rem;
+        border-bottom: 1px solid #f3f4f6;
+        color: #374151;
+        vertical-align: middle;
+    }
+
+    .movie-title {
+        font-weight: 600;
+        color: #1f2937;
+        font-size: 1rem;
+    }
+
+    .rating-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.375rem 0.75rem;
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    .rating-badge::before {
+        content: "⭐";
+    }
+
+    .status-badge {
+        padding: 0.375rem 0.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .status-badge.active {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    .status-badge.inactive {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .action-btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+        min-width: 90px;
+        text-align: center;
+    }
+
+    .btn-delete {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+    }
+
+    .btn-delete:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        color: white;
+    }
+
+    .btn-update {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+    }
+
+    .btn-update:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        color: white;
+    }
+
+    .btn-details {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+    }
+
+    .btn-details:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        color: white;
+    }
+
+    .id-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.875rem;
+    }
+
+    .year-text {
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    @@media (max-width: 768px) {
+        .header-section {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .search-wrapper {
+            max-width: 100%;
+        }
+
+        .modern-table {
+            font-size: 0.875rem;
+        }
+
+        .action-btn {
+            min-width: 70px;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+        }
+    }
+</style>
+
+<div class="modern-card">
+    <div class="header-section">
+        <h1 class="page-title">Film Listesi</h1>
+        <div class="search-wrapper">
+            <ion-icon name="search-sharp" class="search-icon"></ion-icon>
+            <input class="search-input" type="text" placeholder="Film ara...">
+        </div>
+        <a href="#" class="btn-add-new">
+            <ion-icon name="add-circle-outline" style="font-size: 1.25rem;"></ion-icon>
+            Yeni Film Ekle
+        </a>
+    </div>
+
+    <div class="table-container">
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Film Adı</th>
+                    <th>Rating</th>
+                    <th>Çıkış Yılı</th>
+                    <th>Durum</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Detaylar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td><span class="id-badge">@item.MovieId</span></td>
+                        <td><span class="movie-title">@item.Title</span></td>
+                        <td><span class="rating-badge">@item.Rating</span></td>
+                        <td><span class="year-text">@item.CreatedYear</span></td>
+                        <td>
+                            <span class="status-badge @(item.Status ? "active" : "inactive")">
+                                @(item.Status ? "Aktif" : "Pasif")
+                            </span>
+                        </td>
+                        <td><a href="#" class="action-btn btn-delete">Sil</a></td>
+                        <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
+                        <td><a href="#" class="action-btn btn-details">Detaylar</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+----------------------------------------------------
+
+ChatGPT Code Example
+
+@model List<AdminResultMovieDto>
+@{
+    ViewData["Title"] = "Film Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    :root {
+        --primary: #6366f1;
+        --success: #10b981;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --bg-soft: #f8fafc;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --radius: 12px;
+    }
+
+    .admin-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .admin-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .admin-search {
+        position: relative;
+        max-width: 320px;
+        width: 100%;
+    }
+
+        .admin-search input {
+            width: 100%;
+            padding: 10px 14px 10px 40px;
+            border-radius: var(--radius);
+            border: 1px solid #e5e7eb;
+            background: var(--bg-soft);
+        }
+
+        .admin-search ion-icon {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+    .btn-primary-soft {
+        background: var(--primary);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+    }
+
+    .movie-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 8px;
+    }
+
+        .movie-table thead th {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 8px 12px;
+        }
+
+        .movie-table tbody tr {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,.03);
+        }
+
+        .movie-table tbody td {
+            padding: 14px 12px;
+            vertical-align: middle;
+            color: var(--text-dark);
+        }
+
+    .movie-id {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .rating-pill {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        display: inline-flex;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .status-pill {
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+        .status-pill.active {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .status-pill.passive {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+    .action-btn {
+        padding: 8px 14px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .btn-delete { background: var(--danger); }
+    .btn-update { background: var(--success); }
+    .btn-detail { background: var(--warning); }
+
+    @media(max-width:768px) {
+        .movie-table thead {
+            display: none;
+        }
+    }
+</style>
+
+<div class="admin-card">
+    <div class="admin-header">
+        <div class="admin-title">
+            🎬 Film Listesi
+        </div>
+
+        <div class="admin-search">
+            <ion-icon name="search-outline"></ion-icon>
+            <input type="text" placeholder="Film ara..." />
+        </div>
+
+        <a href="#" class="btn-primary-soft">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            Yeni Film
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="movie-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Film Adı</th>
+                    <th>Rating</th>
+                    <th>Yıl</th>
+                    <th>Durum</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Detay</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><div class="movie-id">@item.MovieId</div></td>
+                        <td><strong>@item.Title</strong></td>
+                        <td>
+                            <span class="rating-pill">
+                                ⭐ @item.Rating
+                            </span>
+                        </td>
+                        <td>@item.CreatedYear</td>
+                        <td>
+                            <span class="status-pill @(item.Status ? "active" : "passive")">
+                                @(item.Status ? "AKTİF" : "PASİF")
+                            </span>
+                        </td>
+                        <td><a href="#" class="action-btn btn-delete">Sil</a></td>
+                        <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
+                        <td><a href="#" class="action-btn btn-detail">Detay</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
