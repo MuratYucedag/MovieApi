@@ -1,6 +1,7 @@
-﻿@model List<AdminResultMovieDto>
+﻿@model List<AdminResultCategoryDto>
+
 @{
-    ViewData["Title"] = "Film Listesi";
+    ViewData["Title"] = "CategoryList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
@@ -11,6 +12,7 @@
         --success: #10b981;
         --danger: #ef4444;
         --warning: #f59e0b;
+        --info: #0ea5e9;
         --bg-soft: #f8fafc;
         --text-dark: #1f2937;
         --text-muted: #6b7280;
@@ -77,32 +79,32 @@
         text-decoration: none;
     }
 
-    .movie-table {
+    .category-table {
         width: 100%;
         border-collapse: separate;
         border-spacing: 0 8px;
     }
 
-        .movie-table thead th {
+        .category-table thead th {
             font-size: 12px;
             text-transform: uppercase;
             color: var(--text-muted);
             padding: 8px 12px;
         }
 
-        .movie-table tbody tr {
+        .category-table tbody tr {
             background: #fff;
             border-radius: var(--radius);
             box-shadow: 0 4px 10px rgba(0,0,0,.03);
         }
 
-        .movie-table tbody td {
+        .category-table tbody td {
             padding: 14px 12px;
             vertical-align: middle;
             color: var(--text-dark);
         }
 
-    .movie-id {
+    .id-badge {
         width: 36px;
         height: 36px;
         border-radius: 10px;
@@ -114,16 +116,29 @@
         font-weight: 700;
     }
 
-    .rating-pill {
-        background: #fef3c7;
-        color: #92400e;
-        padding: 6px 10px;
+    .metric-pill {
+        padding: 6px 12px;
         border-radius: 999px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 13px;
         display: inline-flex;
-        gap: 4px;
         align-items: center;
+        gap: 6px;
+    }
+
+    .metric-movie {
+        background: #eef2ff;
+        color: #4338ca;
+    }
+
+    .metric-review {
+        background: #ecfeff;
+        color: #0369a1;
+    }
+
+    .metric-rating {
+        background: #fef3c7;
+        color: #92400e;
     }
 
     .status-pill {
@@ -152,57 +167,48 @@
         color: #fff;
     }
 
-    .btn-delete {
-        background: var(--danger);
-    }
-
     .btn-update {
         background: var(--success);
+    }
+
+    .btn-delete {
+        background: var(--danger);
     }
 
     .btn-detail {
         background: var(--warning);
     }
 
-    @@media(max - width:768px) {
-        .movie-table thead
-
-    {
-        display: none;
-    }
-
-    }
 </style>
 
 <div class="admin-card">
     <div class="admin-header">
         <div class="admin-title">
-            🎬 Film Listesi
+            🗂️ Kategori Listesi
         </div>
 
         <div class="admin-search">
             <ion-icon name="search-outline"></ion-icon>
-            <input type="text" placeholder="Film ara..." />
+            <input type="text" placeholder="Kategori ara..." />
         </div>
 
-        <a href="/Admin/AdminMovie/CreateMovie/" class="btn-primary-soft">
+        <a href="/Admin/AdminCategory/CreateCategory/" class="btn-primary-soft">
             <ion-icon name="add-circle-outline"></ion-icon>
-            Yeni Film
+            Yeni Kategori
         </a>
     </div>
 
     <div class="table-responsive">
-        <table class="movie-table">
+        <table class="category-table">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Film Adı</th>
-                    <th>Rating</th>
-                    <th>Yıl</th>
+                    <th>Kategori</th>
+                    <th>Filmler</th>
+                    <th>Yorumlar</th>
+                    <th>Ort. Puan</th>
                     <th>Durum</th>
-                    <th>Sil</th>
-                    <th>Güncelle</th>
-                    <th>Detay</th>
+                    <th>İşlemler</th>
                 </tr>
             </thead>
             <tbody>
@@ -210,25 +216,43 @@
                 {
                     count++;
                     <tr>
-                        <td><div class="movie-id">@count</div></td>
-                        <td><strong>@item.Title</strong></td>
+                        <td><div class="id-badge">@count</div></td>
+                        <td><strong>@item.CategoryName</strong></td>
+
                         <td>
-                            <span class="rating-pill">
-                                ⭐ @item.Rating
+                            <span class="metric-pill metric-movie">
+                                🎬 0
                             </span>
                         </td>
-                        <td>@item.CreatedYear</td>
+
                         <td>
-                            <span class="status-pill @(item.Status ? "active" : "passive")">
-                                @(item.Status ? "AKTİF" : "PASİF")
+                            <span class="metric-pill metric-review">
+                                💬 0
                             </span>
                         </td>
-                        <td><a href="#" class="action-btn btn-delete">Sil</a></td>
-                        <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
-                        <td><a href="#" class="action-btn btn-detail">Detay</a></td>
+
+                        <td>
+                            <span class="metric-pill metric-rating">
+                                ⭐ 0.00
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-pill @(item.IsActive ? "active" : "passive")">
+                                @(item.IsActive ? "AKTİF" : "PASİF")
+                            </span>
+                        </td>
+
+                        <td class="d-flex gap-2">
+                            <a href="#" class="action-btn btn-update">Güncelle</a>
+                            <a href="#" class="action-btn btn-detail">Filmleri Gör</a>
+                            <a href="/Admin/AdminCategory/DeleteCategory/@item.CategoryId" class="action-btn btn-delete">Sil</a>
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
+
