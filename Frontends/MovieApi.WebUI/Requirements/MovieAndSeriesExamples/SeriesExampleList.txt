@@ -1,0 +1,240 @@
+﻿INSERT INTO Serieses
+(Title, CoverImageUrl, Rating, Description, FirstAirDate, CreatedYear, AverageEpisodeDuration, SeasonCount, EpisodeCount, Status, CategoryId)
+VALUES
+('Breaking Bad', '/images/breaking-bad.jpg', 9.5,
+'Kanser teşhisi konulan bir kimya öğretmeninin ailesini güvence altına almak için uyuşturucu dünyasına adım atmasıyla başlayan karanlık dönüşüm hikayesi.',
+'2008-01-20', 2008, 47, 5, 62, 'Completed', 13),
+
+('Game of Thrones', '/images/game-of-thrones.jpg', 9.2,
+'Yedi Krallık’ta güç, ihanet ve entrika dolu taht mücadelelerini konu alan epik fantastik dizi.',
+'2011-04-17', 2011, 55, 8, 73, 'Completed', 11),
+
+('Sherlock', '/images/sherlock.jpg', 9.1,
+'Modern Londra’da geçen bu uyarlamada Sherlock Holmes, karmaşık suçları zekâsı ve gözlem yeteneğiyle çözer.',
+'2010-07-25', 2010, 90, 4, 13, 'Completed', 13),
+
+('Dark', '/images/dark.jpg', 8.7,
+'Almanya’nın küçük bir kasabasında yaşanan kayıplar, zaman yolculuğu ve aile sırlarını ortaya çıkarır.',
+'2017-12-01', 2017, 55, 3, 26, 'Completed', 15),
+
+('La Casa de Papel', '/images/la-casa-de-papel.jpg', 8.2,
+'Profesör liderliğindeki bir grup suçlu, İspanya Kraliyet Darphanesi’ni soymak için kusursuz bir plan yapar.',
+'2017-05-02', 2017, 45, 5, 41, 'Completed', 13),
+
+('The Walking Dead', '/images/the-walking-dead.jpg', 8.1,
+'Zombi kıyameti sonrası hayatta kalmaya çalışan bir grup insanın dramatik mücadelesi.',
+'2010-10-31', 2010, 45, 11, 177, 'Completed', 14),
+
+('Stranger Things', '/images/stranger-things.jpg', 8.7,
+'1980’lerde geçen dizide, kaybolan bir çocuğun ardından doğaüstü olaylar gün yüzüne çıkar.',
+'2016-07-15', 2016, 55, 4, 34, 'Ongoing', 15),
+
+('Friends', '/images/friends.jpg', 8.9,
+'New York’ta yaşayan altı yakın arkadaşın dostluk, aşk ve kariyer hikayeleri.',
+'1994-09-22', 1994, 22, 10, 236, 'Completed', 1),
+
+('How I Met Your Mother', '/images/himym.jpg', 8.3,
+'Bir babanın çocuklarına anneleriyle nasıl tanıştığını anlattığı eğlenceli ve duygusal dizi.',
+'2005-09-19', 2005, 22, 9, 208, 'Completed', 1),
+
+('The Office', '/images/the-office.jpg', 8.9,
+'Bir kağıt firmasındaki çalışanların günlük hayatlarını belgesel tarzında anlatan sitcom.',
+'2005-03-24', 2005, 22, 9, 201, 'Completed', 1),
+
+('Peaky Blinders', '/images/peaky-blinders.jpg', 8.8,
+'Birinci Dünya Savaşı sonrası İngiltere’de geçen suç ve güç mücadelesini konu alan dizi.',
+'2013-09-12', 2013, 55, 6, 36, 'Completed', 13),
+
+('Prison Break', '/images/prison-break.jpg', 8.3,
+'Kardeşini idamdan kurtarmak için hapishaneye bilerek giren bir adamın zekice planı.',
+'2005-08-29', 2005, 43, 5, 90, 'Completed', 13),
+
+('Narcos', '/images/narcos.jpg', 8.8,
+'Kolombiyalı uyuşturucu baronu Pablo Escobar’ın yükselişi ve düşüşü.',
+'2015-08-28', 2015, 49, 3, 30, 'Completed', 13),
+
+('The Boys', '/images/the-boys.jpg', 8.7,
+'Süper kahramanların karanlık yüzünü anlatan, sert ve mizahi bir dizi.',
+'2019-07-26', 2019, 60, 4, 32, 'Ongoing', 18),
+
+('Vikings', '/images/vikings.jpg', 8.5,
+'Efsanevi Viking savaşçısı Ragnar Lothbrok’un destansı yolculuğu.',
+'2013-03-03', 2013, 50, 6, 89, 'Completed', 20),
+
+('The Mandalorian', '/images/mandalorian.jpg', 8.7,
+'Star Wars evreninde geçen, yalnız bir ödül avcısının maceralarını anlatan dizi.',
+'2019-11-12', 2019, 40, 3, 24, 'Ongoing', 11),
+
+('Chernobyl', '/images/chernobyl.jpg', 9.4,
+'1986’da yaşanan Çernobil nükleer felaketini ve sonuçlarını çarpıcı biçimde anlatan mini dizi.',
+'2019-05-06', 2019, 65, 1, 5, 'Completed', 12),
+
+('House of the Dragon', '/images/house-of-the-dragon.jpg', 8.6,
+'Targaryen Hanedanı’nın iç savaşını konu alan, Game of Thrones evreninde geçen dizi.',
+'2022-08-21', 2022, 60, 2, 18, 'Ongoing', 11),
+
+('Dexter', '/images/dexter.jpg', 8.7,
+'Gündüz adli tıp uzmanı, gece seri katil olan Dexter’ın ikili yaşamı.',
+'2006-10-01', 2006, 50, 8, 96, 'Completed', 13),
+
+('Lost', '/images/lost.jpg', 8.4,
+'Uçak kazası sonrası gizemli bir adada mahsur kalan yolcuların hikayesi.',
+'2004-09-22', 2004, 43, 6, 121, 'Completed', 3),
+
+('Black Mirror', '/images/black-mirror.jpg', 8.8,
+'Teknolojinin insan hayatı üzerindeki karanlık etkilerini anlatan antoloji dizisi.',
+'2011-12-04', 2011, 60, 6, 27, 'Ongoing', 15),
+
+('Better Call Saul', '/images/better-call-saul.jpg', 8.9,
+'Breaking Bad evreninde geçen, avukat Saul Goodman’ın geçmişini anlatan dizi.',
+'2015-02-08', 2015, 47, 6, 63, 'Completed', 13),
+
+('Westworld', '/images/westworld.jpg', 8.6,
+'Yapay zekâlarla dolu bir eğlence parkında kontrolden çıkan olaylar.',
+'2016-10-02', 2016, 60, 4, 36, 'Completed', 15),
+
+('Mr. Robot', '/images/mr-robot.jpg', 8.5,
+'Toplumu değiştirmek isteyen bir hackerın psikolojik ve teknolojik mücadelesi.',
+'2015-06-24', 2015, 49, 4, 45, 'Completed', 13),
+
+('The Crown', '/images/the-crown.jpg', 8.7,
+'İngiliz Kraliyet Ailesi’nin siyasi ve kişisel yaşamını anlatan biyografik dizi.',
+'2016-11-04', 2016, 58, 6, 60, 'Completed', 12),
+
+('Band of Brothers', '/images/band-of-brothers.jpg', 9.4,
+'II. Dünya Savaşı’nda görev yapan bir paraşüt birliğinin gerçek hikayesi.',
+'2001-09-09', 2001, 70, 1, 10, 'Completed', 20),
+
+('The Witcher', '/images/the-witcher.jpg', 8.2,
+'Canavar avcısı Geralt of Rivia’nın kader, büyü ve savaşlarla dolu hikayesi.',
+'2019-12-20', 2019, 60, 3, 24, 'Ongoing', 11),
+
+('Naruto', '/images/naruto.jpg', 8.4,
+'Ninja olmayı hayal eden Naruto’nun dostluk ve mücadelelerle dolu yolculuğu.',
+'2002-10-03', 2002, 23, 5, 220, 'Completed', 17),
+
+('Attack on Titan', '/images/attack-on-titan.jpg', 9.1,
+'İnsanlığı yok etmek isteyen devlere karşı verilen umutsuz savaş.',
+'2013-04-07', 2013, 24, 4, 87, 'Completed', 17);
+
+
+--------------------------------------------------------
+
+INSERT INTO Serieses
+(Title, CoverImageUrl, Rating, Description, FirstAirDate, CreatedYear, AverageEpisodeDuration, SeasonCount, EpisodeCount, Status, CategoryId)
+VALUES
+('Sopranos', '/images/sopranos.jpg', 9.2,
+'New Jersey’de yaşayan bir mafya liderinin suç dünyası ile aile hayatı arasındaki dengeyi koruma mücadelesi.',
+'1999-01-10', 1999, 55, 6, 86, 'Completed', 13),
+
+('Mad Men', '/images/mad-men.jpg', 8.7,
+'1960’lı yıllarda New York’taki reklam dünyasını ve karakterlerin iç çatışmalarını anlatan prestij dizisi.',
+'2007-07-19', 2007, 47, 7, 92, 'Completed', 2),
+
+('House M.D.', '/images/house-md.jpg', 8.7,
+'Dahiyane ama huysuz bir doktorun, karmaşık vakaları alışılmadık yöntemlerle çözmesini konu alan dizi.',
+'2004-11-16', 2004, 44, 8, 177, 'Completed', 2),
+
+('The Big Bang Theory', '/images/big-bang-theory.jpg', 8.1,
+'Sosyal becerileri zayıf bilim insanları ile hayat dolu komşularının eğlenceli etkileşimleri.',
+'2007-09-24', 2007, 22, 12, 279, 'Completed', 1),
+
+('Ozark', '/images/ozark.jpg', 8.4,
+'Para aklama işine bulaşan bir ailenin suç dünyasında hayatta kalma mücadelesi.',
+'2017-07-21', 2017, 55, 4, 44, 'Completed', 13),
+
+('Mindhunter', '/images/mindhunter.jpg', 8.6,
+'FBI ajanlarının seri katillerle röportaj yaparak suç psikolojisini anlamaya çalışması.',
+'2017-10-13', 2017, 50, 2, 19, 'Completed', 13),
+
+('Fargo', '/images/fargo.jpg', 8.9,
+'Birbirinden bağımsız suç hikayelerinin kara mizah ve gerilimle işlendiği antoloji dizi.',
+'2014-04-15', 2014, 53, 5, 51, 'Completed', 13),
+
+('True Detective', '/images/true-detective.jpg', 8.9,
+'Her sezon farklı bir suç hikayesini derin karakter analizleriyle anlatan antoloji dizi.',
+'2014-01-12', 2014, 58, 4, 30, 'Ongoing', 13),
+
+('Boardwalk Empire', '/images/boardwalk-empire.jpg', 8.6,
+'1920’lerin Amerika’sında içki yasağı döneminde yükselen suç imparatorlukları.',
+'2010-09-19', 2010, 55, 5, 56, 'Completed', 13),
+
+('Sons of Anarchy', '/images/sons-of-anarchy.jpg', 8.6,
+'Bir motosiklet kulübünün suç, sadakat ve aile bağları etrafında şekillenen hikayesi.',
+'2008-09-03', 2008, 45, 7, 92, 'Completed', 13),
+
+('The Handmaid’s Tale', '/images/handmaids-tale.jpg', 8.4,
+'Totaliter bir rejimde kadınların baskı altında yaşadığı distopik bir toplum.',
+'2017-04-26', 2017, 55, 5, 56, 'Ongoing', 15),
+
+('Homeland', '/images/homeland.jpg', 8.3,
+'Ulusal güvenlik, casusluk ve psikolojik gerilim temalı politik dizi.',
+'2011-10-02', 2011, 55, 8, 96, 'Completed', 13),
+
+('The Night Of', '/images/the-night-of.jpg', 8.5,
+'Bir cinayetle suçlanan genç bir adamın adalet sistemi içindeki mücadelesi.',
+'2016-07-10', 2016, 65, 1, 8, 'Completed', 13),
+
+('Lupin', '/images/lupin.jpg', 7.5,
+'Arsène Lupin’den ilham alan bir hırsızın modern Paris’teki maceraları.',
+'2021-01-08', 2021, 45, 3, 17, 'Ongoing', 13),
+
+('Rome', '/images/rome.jpg', 8.7,
+'Antik Roma’da geçen entrika, siyaset ve savaş dolu tarihi dizi.',
+'2005-08-28', 2005, 55, 2, 22, 'Completed', 20),
+
+('Spartacus', '/images/spartacus.jpg', 8.5,
+'Roma İmparatorluğu’na karşı ayaklanan gladyatörlerin kanlı mücadelesi.',
+'2010-01-22', 2010, 55, 4, 39, 'Completed', 20),
+
+('The Pacific', '/images/the-pacific.jpg', 8.3,
+'II. Dünya Savaşı’nda Pasifik Cephesi’nde görev yapan askerlerin hikayesi.',
+'2010-03-14', 2010, 60, 1, 10, 'Completed', 20),
+
+('The Expanse', '/images/the-expanse.jpg', 8.5,
+'Güneş Sistemi’nde geçen politik entrikalar ve uzay savaşları.',
+'2015-12-14', 2015, 60, 6, 62, 'Completed', 15),
+
+('Doctor Who', '/images/doctor-who.jpg', 8.6,
+'Zamanda ve uzayda yolculuk yapan Doktor’un maceraları.',
+'2005-03-26', 2005, 45, 13, 160, 'Ongoing', 15),
+
+('Rick and Morty', '/images/rick-and-morty.jpg', 9.1,
+'Çılgın bir bilim insanı ile torununun absürt ve bilimkurgu dolu maceraları.',
+'2013-12-02', 2013, 22, 7, 71, 'Ongoing', 5),
+
+('Family Guy', '/images/family-guy.jpg', 8.2,
+'Griffin ailesinin absürt ve kara mizah dolu günlük yaşamı.',
+'1999-01-31', 1999, 22, 21, 400, 'Ongoing', 1),
+
+('South Park', '/images/south-park.jpg', 8.7,
+'Amerikan toplumunu sert bir mizahla eleştiren animasyon dizisi.',
+'1997-08-13', 1997, 22, 26, 325, 'Ongoing', 5),
+
+('Arcane', '/images/arcane.jpg', 9.0,
+'League of Legends evreninde geçen, sınıf ayrımı ve güç mücadelesini konu alan animasyon dizi.',
+'2021-11-06', 2021, 40, 1, 9, 'Ongoing', 5),
+
+('The Umbrella Academy', '/images/umbrella-academy.jpg', 8.5,
+'Özel güçlere sahip kardeşlerin kıyameti engelleme çabası.',
+'2019-02-15', 2019, 50, 4, 36, 'Ongoing', 18),
+
+('The Good Place', '/images/the-good-place.jpg', 8.2,
+'Öldükten sonra yanlışlıkla cennete gönderilen bir kadının eğlenceli hikayesi.',
+'2016-09-19', 2016, 22, 4, 53, 'Completed', 1),
+
+('Brooklyn Nine-Nine', '/images/brooklyn-nine-nine.jpg', 8.4,
+'New York’ta bir polis karakolunda geçen eğlenceli ve tempolu sitcom.',
+'2013-09-17', 2013, 22, 8, 153, 'Completed', 1),
+
+('Euphoria', '/images/euphoria.jpg', 8.4,
+'Gençlerin bağımlılık, kimlik ve travmalarla dolu hayatlarını çarpıcı bir dille anlatan dizi.',
+'2019-06-16', 2019, 55, 2, 16, 'Ongoing', 2),
+
+('Sex Education', '/images/sex-education.jpg', 8.3,
+'Gençlerin cinsellik ve ilişkiler üzerine yaşadığı deneyimleri mizahi bir dille ele alan dizi.',
+'2019-01-11', 2019, 50, 4, 32, 'Completed', 1),
+
+('Wednesday', '/images/wednesday.jpg', 8.1,
+'Addams Ailesi’nin karanlık ve zeki üyesi Wednesday’in okul hayatı ve gizemli olayları.',
+'2022-11-23', 2022, 45, 1, 8, 'Ongoing', 13);

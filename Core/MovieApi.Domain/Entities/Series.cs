@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace MovieApi.Domain.Entities
 {
-    public class Movie
+    public class Series
     {
-        public int MovieId { get; set; }
+        public int SeriesId { get; set; }
         public string Title { get; set; }
         public string CoverImageUrl { get; set; }
         public decimal Rating { get; set; }
         public string Description { get; set; }
-        public int Duration { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public string CreatedYear { get; set; }
+        public DateTime FirstAirDate { get; set; }
+        public int CreatedYear { get; set; }
+        public int? AverageEpisodeDuration { get; set; }
+        public int SeasonCount { get; set; }
+        public int EpisodeCount { get; set; }
         public string Status { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }

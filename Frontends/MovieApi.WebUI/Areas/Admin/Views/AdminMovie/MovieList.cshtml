@@ -218,11 +218,7 @@
                             </span>
                         </td>
                         <td>@item.CreatedYear</td>
-                        <td>
-                            <span class="status-pill @(item.Status ? "active" : "passive")">
-                                @(item.Status ? "AKTİF" : "PASİF")
-                            </span>
-                        </td>
+                        <td>@item.Status</td>
                         <td><a href="#" class="action-btn btn-delete">Sil</a></td>
                         <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
                         <td><a href="#" class="action-btn btn-detail">Detay</a></td>
