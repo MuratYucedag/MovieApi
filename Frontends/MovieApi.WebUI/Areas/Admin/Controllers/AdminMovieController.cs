@@ -17,7 +17,7 @@ namespace MovieApi.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> MovieList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7053/api/Movies");
+            var responseMessage = await client.GetAsync("https://localhost:7053/api/Movies/GetMovieWithCategory");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
