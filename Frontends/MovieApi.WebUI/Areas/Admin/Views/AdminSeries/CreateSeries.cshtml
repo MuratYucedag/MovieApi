@@ -1,0 +1,192 @@
+﻿@model CreateAdminSeriesDto
+
+@{
+    ViewData["Title"] = "CreateSeries";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<style>
+    :root {
+        --primary: #6366f1;
+        --success: #10b981;
+        --bg-soft: #f8fafc;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --radius: 12px;
+    }
+
+    .admin-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.03);
+        height: 100%;
+    }
+
+        .form-card h6 {
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+    .form-group label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: var(--text-dark);
+    }
+
+    .form-control-modern {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: var(--radius);
+        border: 1px solid #e5e7eb;
+        background: var(--bg-soft);
+    }
+
+        .form-control-modern:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(99,102,241,.15);
+        }
+
+    .form-switch-modern {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .btn-primary-soft {
+        background: var(--primary);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .btn-secondary-soft {
+        background: #e5e7eb;
+        color: #374151;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 600;
+    }
+</style>
+
+<div class="admin-card">
+    <div class="page-title">
+        🎬 Yeni Dizi Ekle
+    </div>
+
+    <form method="post">
+        <div class="row g-4">
+
+            <!-- SOL -->
+            <div class="col-lg-8">
+                <div class="form-card">
+                    <h6>Dizi Bilgileri</h6>
+
+                    <div class="form-group mb-3">
+                        <label>Dizi Adı</label>
+                        <input asp-for="Title" class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Kapak Görsel URL</label>
+                        <input asp-for="CoverImageUrl" class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Açıklama</label>
+                        <textarea asp-for="Description" rows="5"
+                                  class="form-control-modern"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAĞ -->
+            <div class="col-lg-4">
+                <div class="form-card">
+                    <h6>Yayın & Meta Bilgiler</h6>
+
+                    <div class="form-group mb-3">
+                        <label>Rating</label>
+                        <input asp-for="Rating" type="number" step="0.1"
+                               class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Süre (Dakika)</label>
+                        <input asp-for="AverageEpisodeDuration" type="number"
+                               class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Yayın Tarihi</label>
+                        <input asp-for="CreatedYear" type="date"
+                               class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Çıkış Yılı</label>
+                        <input asp-for="CreatedYear"
+                               class="form-control-modern" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Durum</label>
+                        <div class="form-switch-modern">
+                            <input asp-for="Status" type="checkbox" />
+                            <span>Yayında</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-actions">
+            <a href="/Admin/Movie/Index" class="btn-secondary-soft">
+                Vazgeç
+            </a>
+            <button type="submit" class="btn-primary-soft">
+                <ion-icon name="save-outline"></ion-icon>
+                Kaydet
+            </button>
+        </div>
+    </form>
+</div>
+
+

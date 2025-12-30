@@ -1,11 +1,4 @@
-﻿@model List<AdminResultMovieDto>
-@{
-    ViewData["Title"] = "Film Listesi";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
-    int count = 0;
-}
-
-<div class="cinema-shell">
+﻿<div class="cinema-shell">
     <div class="cinema-topbar">
         <div class="d-flex align-items-start align-items-md-center justify-content-between gap-3 flex-column flex-md-row">
             <div>
@@ -54,7 +47,7 @@
                         // Status bool/int olabilir; güvenli yorumlayalım:
                         // - bool ise True/False
                         // - int ise 1 aktif, 0 pasif gibi
-                        var statusText = item.Status.ToString() ?? "";
+                        var statusText = item.MovieStatus.ToString() ?? "";
                         var isActive = statusText.Equals("True", StringComparison.OrdinalIgnoreCase)
                         || statusText == "1";
 
@@ -62,20 +55,25 @@
                             <td>@count</td>
 
                             <td>
-                                <div class="movie-title">                
-                                       @item.Title           
+                                <div class="movie-title">
+                                    <span class="clap">
+                                        <ion-icon name="film-outline"></ion-icon>
+                                    </span>
+                                    <div>
+                                        <div>@item.MovieTitle</div>
+                                        <div class="muted">Katalog kaydı</div>
+                                    </div>
                                 </div>
                             </td>
-                            <td>Kategori Adı</td>
 
                             <td>
                                 <span class="rating-badge">
                                     <ion-icon name="star"></ion-icon>
-                                    @item.Rating
+                                    @item.MovieRating
                                 </span>
                             </td>
 
-                            <td class="muted">@item.CreatedYear</td>
+                            <td class="muted">@item.MovileCreatedYear</td>
 
                             <td>
                                 <span class="pill @(isActive ? "on" : "off")">

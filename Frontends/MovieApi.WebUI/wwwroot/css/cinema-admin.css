@@ -1,0 +1,505 @@
+﻿
+/* --- Cinematic Admin (scoped) --- */
+.cinema-shell {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: radial-gradient(1200px 600px at 10% 0%, rgba(255, 0, 61, .18), transparent 55%), radial-gradient(900px 500px at 90% 20%, rgba(0, 162, 255, .14), transparent 52%), linear-gradient(180deg, #0b0b10 0%, #07070b 100%);
+    box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.cinema-topbar {
+    padding: 18px 18px 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    background: linear-gradient(90deg, rgba(255,0,61,.10), rgba(255,255,255,0));
+}
+
+.cinema-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #f5f7ff;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+    .cinema-title .badge-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #ff003d;
+        box-shadow: 0 0 12px rgba(255,0,61,.85);
+    }
+
+.cinema-sub {
+    margin-top: 6px;
+    color: rgba(245,247,255,.65);
+    font-size: .92rem;
+}
+
+.cinema-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.cinema-search {
+    position: relative;
+    min-width: 260px;
+    max-width: 380px;
+    width: 100%;
+}
+
+    .cinema-search input {
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.04);
+        color: #f5f7ff;
+        padding-left: 42px;
+        height: 42px;
+        outline: none;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+        transition: .2s ease;
+    }
+
+        .cinema-search input::placeholder {
+            color: rgba(245,247,255,.45);
+        }
+
+        .cinema-search input:focus {
+            border-color: rgba(255,0,61,.45);
+            box-shadow: 0 0 0 3px rgba(255,0,61,.15);
+            background: rgba(255,255,255,.06);
+        }
+
+    .cinema-search .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(245,247,255,.65);
+        display: inline-flex;
+        font-size: 18px;
+    }
+
+.btn-cinema {
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.05);
+    color: #f5f7ff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 14px;
+    transition: .2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    .btn-cinema:hover {
+        transform: translateY(-1px);
+        background: rgba(255,255,255,.08);
+        border-color: rgba(255,255,255,.16);
+        color: #fff;
+    }
+
+.btn-cinema-primary {
+    background: linear-gradient(90deg, rgba(255,0,61,.95), rgba(255,64,129,.70));
+    border-color: rgba(255,0,61,.35);
+    box-shadow: 0 10px 22px rgba(255,0,61,.18);
+}
+
+    .btn-cinema-primary:hover {
+        box-shadow: 0 14px 26px rgba(255,0,61,.25);
+        border-color: rgba(255,0,61,.55);
+    }
+
+.cinema-body {
+    padding: 14px 18px 18px 18px;
+}
+
+.cinema-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+    .cinema-table thead th {
+        font-size: .78rem;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        color: rgba(245,247,255,.60);
+        border: none !important;
+        padding: 8px 10px;
+    }
+
+.cinema-row {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    transition: .2s ease;
+}
+
+    .cinema-row td {
+        border: none !important;
+        padding: 14px 12px;
+        color: rgba(245,247,255,.90);
+        vertical-align: middle;
+    }
+
+        .cinema-row td:first-child {
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+            width: 60px;
+            color: rgba(245,247,255,.70);
+            font-weight: 600;
+        }
+
+        .cinema-row td:last-child {
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
+        }
+
+    .cinema-row:hover {
+        background: rgba(255,255,255,.06);
+        border-color: rgba(255,0,61,.22);
+        box-shadow: 0 0 0 1px rgba(255,0,61,.08), 0 14px 30px rgba(0,0,0,.35);
+        transform: translateY(-1px);
+    }
+
+.cat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 650;
+}
+
+    .cat-title .tag {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,162,255,.10);
+        border: 1px solid rgba(0,162,255,.18);
+        box-shadow: 0 0 18px rgba(0,162,255,.10);
+        color: rgba(245,247,255,.92);
+        font-size: 18px;
+        flex: 0 0 auto;
+    }
+
+.muted {
+    color: rgba(245,247,255,.65);
+    font-weight: 500;
+}
+
+.metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.04);
+    font-weight: 650;
+    min-width: 92px;
+    justify-content: center;
+    color: rgba(245,247,255,.92);
+}
+
+    .metric ion-icon {
+        font-size: 16px;
+    }
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.04);
+    font-size: .85rem;
+}
+
+    .pill .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.45);
+    }
+
+    .pill.on .dot {
+        background: #2ee59d;
+        box-shadow: 0 0 12px rgba(46,229,157,.55);
+    }
+
+    .pill.off .dot {
+        background: #ffb020;
+        box-shadow: 0 0 12px rgba(255,176,32,.45);
+    }
+
+.btn-mini {
+    border-radius: 12px;
+    height: 36px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.05);
+    color: #f5f7ff;
+    text-decoration: none;
+    transition: .2s ease;
+    white-space: nowrap;
+}
+
+    .btn-mini:hover {
+        background: rgba(255,255,255,.08);
+        transform: translateY(-1px);
+        color: #fff;
+        border-color: rgba(255,255,255,.16);
+    }
+
+.btn-mini-warning {
+    background: rgba(255,176,32,.12);
+    border-color: rgba(255,176,32,.22);
+}
+
+.btn-mini-primary {
+    background: rgba(255,0,61,.12);
+    border-color: rgba(255,0,61,.22);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* --- CreateCategory küçük UI düzeltmeleri --- */
+.cinema-card-head-row {
+    align-items: center;
+}
+
+.tag,
+.tag-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+    .tag ion-icon,
+    .tag-lg ion-icon {
+        display: block;
+    }
+
+.tag-lg {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+/* --- Premium Switch --- */
+.cinema-switch {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+    .cinema-switch > input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+.cinema-switch-ui {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(0,0,0,.22);
+    backdrop-filter: blur(8px);
+}
+
+.cinema-switch-pill {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 46px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+    .cinema-switch-pill .on,
+    .cinema-switch-pill .off {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: .95rem;
+        opacity: .75;
+    }
+
+    .cinema-switch-pill::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 8px);
+        height: calc(100% - 8px);
+        border-radius: 12px;
+        background: linear-gradient(90deg, rgba(255,0,77,.85), rgba(0,159,255,.35));
+        box-shadow: 0 10px 30px rgba(0,0,0,.45);
+        transition: transform .22s ease;
+    }
+
+.cinema-switch > input:checked + .cinema-switch-ui .cinema-switch-pill::after {
+    transform: translateX(100%);
+}
+
+.cinema-switch > input:not(:checked) + .cinema-switch-ui .cinema-switch-pill .off {
+    opacity: 1;
+}
+
+.cinema-switch > input:checked + .cinema-switch-ui .cinema-switch-pill .on {
+    opacity: 1;
+}
+/* ===== FIX: Cinema input icon vertical align + spacing ===== */
+.cinema-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cinema-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
+    .cinema-input-icon ion-icon {
+        display: block;
+        line-height: 1;
+        font-size: 18px;
+    }
+
+.cinema-control {
+    height: 46px; /* ikonla aynı hizaya kilitler */
+    padding-left: 46px !important;
+    line-height: 46px; /* bazı temalarda kaymayı tamamen bitirir */
+}
+/* ===== FIX: Premium switch (Aktif solda) + glow ===== */
+.cinema-switch {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+    .cinema-switch > input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+.cinema-switch-ui {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(0,0,0,.22);
+    backdrop-filter: blur(8px);
+}
+
+.cinema-switch-pill {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 46px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+    /* metinler */
+    .cinema-switch-pill .on,
+    .cinema-switch-pill .off {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 650;
+        font-size: .95rem;
+        opacity: .65;
+        transition: .2s ease;
+    }
+
+    /* slider (highlight) — DEFAULT: sağda (Pasif) */
+    .cinema-switch-pill::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 8px);
+        height: calc(100% - 8px);
+        border-radius: 12px;
+        /* Pasif tarafın soğuk tonu */
+        background: linear-gradient(90deg, rgba(0,159,255,.35), rgba(0,159,255,.18));
+        box-shadow: 0 0 14px rgba(120,180,255,.35), 0 10px 30px rgba(0,0,0,.45);
+        transform: translateX(100%); /* sağa (Pasif) */
+        transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+
+/* CHECKED: Aktif (solda) */
+.cinema-switch > input:checked + .cinema-switch-ui .cinema-switch-pill::after {
+    transform: translateX(0); /* sola (Aktif) */
+    background: linear-gradient(90deg, rgba(255,0,77,.88), rgba(0,159,255,.28));
+    box-shadow: 0 0 12px rgba(255,0,77,.70), 0 0 26px rgba(255,0,77,.45), inset 0 0 10px rgba(255,255,255,.18), 0 10px 30px rgba(0,0,0,.45);
+}
+
+/* yazı parlamaları */
+.cinema-switch > input:checked + .cinema-switch-ui .cinema-switch-pill .on {
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,80,120,.75);
+}
+
+.cinema-switch > input:not(:checked) + .cinema-switch-ui .cinema-switch-pill .off {
+    opacity: 1;
+    color: #eaf3ff;
+    text-shadow: 0 0 10px rgba(120,180,255,.65);
+}
+
+/* hafif dış glow (kartın içinde premium dursun) */
+.cinema-switch > input:checked + .cinema-switch-ui {
+    box-shadow: inset 0 0 0 1px rgba(255,0,77,.22), 0 0 18px rgba(255,0,77,.18);
+}
+
+.cinema-switch > input:not(:checked) + .cinema-switch-ui {
+    box-shadow: inset 0 0 0 1px rgba(120,180,255,.22), 0 0 18px rgba(120,180,255,.14);
+}

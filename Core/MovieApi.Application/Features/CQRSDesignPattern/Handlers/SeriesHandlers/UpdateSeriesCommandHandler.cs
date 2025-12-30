@@ -16,7 +16,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.SeriesHandler
         {
             _context = context;
         }
-        public async Task Handler(UpdateSeriesCommand command)
+        public async Task Handle(UpdateSeriesCommand command)
         {
             var value = await _context.Serieses.FindAsync(command.SeriesId);
             value.Rating = command.Rating;
