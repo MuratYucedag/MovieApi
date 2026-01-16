@@ -1,0 +1,89 @@
+﻿[
+  { "name": "Ahmet", "surname": "Yılmaz", "username": "ahmetyilmaz", "email": "ahmet.yilmaz@gmail.com", "password": "1234aA*" },
+  { "name": "Mehmet", "surname": "Demir", "username": "mehmetdemir", "email": "mehmet.demir@gmail.com", "password": "1234aA*" },
+  { "name": "Ayşe", "surname": "Kaya", "username": "aysekaya", "email": "ayse.kaya@gmail.com", "password": "1234aA*" },
+  { "name": "Fatma", "surname": "Çelik", "username": "fatmacelik", "email": "fatma.celik@gmail.com", "password": "1234aA*" },
+  { "name": "Ali", "surname": "Şahin", "username": "alisahin", "email": "ali.sahin@gmail.com", "password": "1234aA*" },
+
+  { "name": "Emre", "surname": "Yıldız", "username": "emreyildiz", "email": "emre.yildiz@gmail.com", "password": "1234aA*" },
+  { "name": "Zeynep", "surname": "Aydın", "username": "zeynepaydin", "email": "zeynep.aydin@gmail.com", "password": "1234aA*" },
+  { "name": "Burak", "surname": "Öztürk", "username": "burakozturk", "email": "burak.ozturk@gmail.com", "password": "1234aA*" },
+  { "name": "Elif", "surname": "Arslan", "username": "elifarslan", "email": "elif.arslan@gmail.com", "password": "1234aA*" },
+  { "name": "Can", "surname": "Doğan", "username": "candoğan", "email": "can.dogan@gmail.com", "password": "1234aA*" },
+
+  { "name": "Merve", "surname": "Kılıç", "username": "mervekilic", "email": "merve.kilic@gmail.com", "password": "1234aA*" },
+  { "name": "Serkan", "surname": "Koç", "username": "serkankoc", "email": "serkan.koc@gmail.com", "password": "1234aA*" },
+  { "name": "Büşra", "surname": "Polat", "username": "busrapolat", "email": "busra.polat@gmail.com", "password": "1234aA*" },
+  { "name": "Oğuz", "surname": "Aksoy", "username": "oguzaksoy", "email": "oguz.aksoy@gmail.com", "password": "1234aA*" },
+  { "name": "Hakan", "surname": "Güneş", "username": "hakangunes", "email": "hakan.gunes@gmail.com", "password": "1234aA*" },
+
+  { "name": "Ece", "surname": "Bulut", "username": "ecebulut", "email": "ece.bulut@gmail.com", "password": "1234aA*" },
+  { "name": "Tolga", "surname": "Erdoğan", "username": "tolgaerdogan", "email": "tolga.erdogan@gmail.com", "password": "1234aA*" },
+  { "name": "İrem", "surname": "Kurt", "username": "iremkurt", "email": "irem.kurt@gmail.com", "password": "1234aA*" },
+  { "name": "Onur", "surname": "Özdemir", "username": "onurozdemir", "email": "onur.ozdemir@gmail.com", "password": "1234aA*" },
+  { "name": "Seda", "surname": "Yalçın", "username": "sedayalcin", "email": "seda.yalcin@gmail.com", "password": "1234aA*" },
+
+  { "name": "Kaan", "surname": "Sezer", "username": "kaansezer", "email": "kaan.sezer@gmail.com", "password": "1234aA*" },
+  { "name": "Gamze", "surname": "Eren", "username": "gamzeeren", "email": "gamze.eren@gmail.com", "password": "1234aA*" },
+  { "name": "Furkan", "surname": "Taş", "username": "furkantas", "email": "furkan.tas@gmail.com", "password": "1234aA*" },
+  { "name": "Derya", "surname": "Kaplan", "username": "deryakaplan", "email": "derya.kaplan@gmail.com", "password": "1234aA*" },
+  { "name": "Cem", "surname": "Uçar", "username": "cemucar", "email": "cem.ucar@gmail.com", "password": "1234aA*" },
+
+  { "name": "Selin", "surname": "Tekin", "username": "selintekin", "email": "selin.tekin@gmail.com", "password": "1234aA*" },
+  { "name": "Murat", "surname": "Karaca", "username": "muratkaraca", "email": "murat.karaca@gmail.com", "password": "1234aA*" },
+  { "name": "Esra", "surname": "Şimşek", "username": "esrasimsek", "email": "esra.simsek@gmail.com", "password": "1234aA*" },
+  { "name": "Volkan", "surname": "Ergin", "username": "volkanergin", "email": "volkan.ergin@gmail.com", "password": "1234aA*" },
+  { "name": "Pınar", "surname": "Avcı", "username": "pinaravci", "email": "pinar.avci@gmail.com", "password": "1234aA*" },
+
+  { "name": "Umut", "surname": "Yavuz", "username": "umutyavuz", "email": "umut.yavuz@gmail.com", "password": "1234aA*" },
+  { "name": "Aslı", "surname": "Bayrak", "username": "aslibayrak", "email": "asli.bayrak@gmail.com", "password": "1234aA*" },
+  { "name": "Sinan", "surname": "Keskin", "username": "sinankeskin", "email": "sinan.keskin@gmail.com", "password": "1234aA*" },
+  { "name": "Hande", "surname": "Özer", "username": "handozer", "email": "hande.ozer@gmail.com", "password": "1234aA*" },
+  { "name": "Kerem", "surname": "Alkan", "username": "keremalkan", "email": "kerem.alkan@gmail.com", "password": "1234aA*" },
+
+  { "name": "Nazlı", "surname": "Işık", "username": "nazliisik", "email": "nazli.isik@gmail.com", "password": "1234aA*" },
+  { "name": "Batuhan", "surname": "Çınar", "username": "batuhancinar", "email": "batuhan.cinar@gmail.com", "password": "1234aA*" },
+  { "name": "Melike", "surname": "Köse", "username": "melikekose", "email": "melike.kose@gmail.com", "password": "1234aA*" },
+  { "name": "Eren", "surname": "Toprak", "username": "erentoprak", "email": "eren.toprak@gmail.com", "password": "1234aA*" },
+  { "name": "Yasemin", "surname": "Sarı", "username": "yaseminsari", "email": "yasemin.sari@gmail.com", "password": "1234aA*" }
+]
+
+------------------------------------------------
+
+[
+  { "name": "Deniz", "surname": "Karaman", "username": "denizkaraman", "email": "deniz.karaman@gmail.com", "password": "1234aA*" },
+  { "name": "Berk", "surname": "Önal", "username": "berkonal", "email": "berk.onal@gmail.com", "password": "1234aA*" },
+  { "name": "Şeyma", "surname": "Acar", "username": "seymaacar", "email": "seyma.acar@gmail.com", "password": "1234aA*" },
+  { "name": "Kürşat", "surname": "Bozkurt", "username": "kursatbozkurt", "email": "kursat.bozkurt@gmail.com", "password": "1234aA*" },
+  { "name": "Nilay", "surname": "Gür", "username": "nilaygur", "email": "nilay.gur@gmail.com", "password": "1234aA*" },
+
+  { "name": "Emel", "surname": "Sönmez", "username": "emelsonmez", "email": "emel.sonmez@gmail.com", "password": "1234aA*" },
+  { "name": "Taha", "surname": "Korkmaz", "username": "tahakorkmaz", "email": "taha.korkmaz@gmail.com", "password": "1234aA*" },
+  { "name": "Rabia", "surname": "Altun", "username": "rabiaaltun", "email": "rabia.altun@gmail.com", "password": "1234aA*" },
+  { "name": "Yunus", "surname": "Pehlivan", "username": "yunuspehlivan", "email": "yunus.pehlivan@gmail.com", "password": "1234aA*" },
+  { "name": "Sibel", "surname": "Özkan", "username": "sibelozkan", "email": "sibel.ozkan@gmail.com", "password": "1234aA*" },
+
+  { "name": "Okan", "surname": "Varol", "username": "okanvarol", "email": "okan.varol@gmail.com", "password": "1234aA*" },
+  { "name": "Ebru", "surname": "Taşkın", "username": "ebrutaskin", "email": "ebru.taskin@gmail.com", "password": "1234aA*" },
+  { "name": "Halil", "surname": "Yedek", "username": "halilyedek", "email": "halil.yedek@gmail.com", "password": "1234aA*" },
+  { "name": "Beyza", "surname": "Mutlu", "username": "beyzamutlu", "email": "beyza.mutlu@gmail.com", "password": "1234aA*" },
+  { "name": "Serhat", "surname": "Duman", "username": "serhatduman", "email": "serhat.duman@gmail.com", "password": "1234aA*" },
+
+  { "name": "Nihan", "surname": "Karakaya", "username": "nihankarakaya", "email": "nihan.karakaya@gmail.com", "password": "1234aA*" },
+  { "name": "İlker", "surname": "Sağlam", "username": "ilkersaglam", "email": "ilker.saglam@gmail.com", "password": "1234aA*" },
+  { "name": "Cansu", "surname": "Ersoy", "username": "cansuersoy", "email": "cansu.ersoy@gmail.com", "password": "1234aA*" },
+  { "name": "Levent", "surname": "Bayram", "username": "leventbayram", "email": "levent.bayram@gmail.com", "password": "1234aA*" },
+  { "name": "Melis", "surname": "Özsoy", "username": "melisozsoy", "email": "melis.ozsoy@gmail.com", "password": "1234aA*" },
+
+  { "name": "Uğur", "surname": "Çoban", "username": "ugurcoban", "email": "ugur.coban@gmail.com", "password": "1234aA*" },
+  { "name": "Tuğçe", "surname": "Keleş", "username": "tugcekel es", "email": "tugce.keles@gmail.com", "password": "1234aA*" },
+  { "name": "Barış", "surname": "Yüksel", "username": "barisyuksel", "email": "baris.yuksel@gmail.com", "password": "1234aA*" },
+  { "name": "Aylin", "surname": "Erbaş", "username": "aylinerbas", "email": "aylin.erbas@gmail.com", "password": "1234aA*" },
+  { "name": "Fırat", "surname": "Özbek", "username": "firatozbek", "email": "firat.ozbek@gmail.com", "password": "1234aA*" },
+
+  { "name": "Selçuk", "surname": "Demirtaş", "username": "selcukdemirtas", "email": "selcuk.demirtas@gmail.com", "password": "1234aA*" },
+  { "name": "Dilan", "surname": "Kayaalp", "username": "dilankayaalp", "email": "dilan.kayaalp@gmail.com", "password": "1234aA*" },
+  { "name": "Mertcan", "surname": "Ünlü", "username": "mertcanunlu", "email": "mertcan.unlu@gmail.com", "password": "1234aA*" },
+  { "name": "Özge", "surname": "Kantarcı", "username": "ozgekantarci", "email": "ozge.kantarci@gmail.com", "password": "1234aA*" },
+  { "name": "Hüseyin", "surname": "Başaran", "username": "huseyinbasaran", "email": "huseyin.basaran@gmail.com", "password": "1234aA*" }
+]

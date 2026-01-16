@@ -15,14 +15,16 @@ namespace SeriesApi.WebApi.Controllers
         private readonly CreateSeriesCommandHandler _createSeriesCommandHandler;
         private readonly UpdateSeriesCommandHandler _updateSeriesCommandHandler;
         private readonly RemoveSeriesCommandHandler _removeSeriesCommandHandler;
+        private readonly GetSeriesWithCategoryQueryHandler _getSeriesWithCategoryQueryHandler;
 
-        public SeriesesController(GetSeriesByIdQueryHandler getSeriesByIdQueryHandler, GetSeriesQueryHandler getSeriesQueryHandler, CreateSeriesCommandHandler createSeriesCommandHandler, UpdateSeriesCommandHandler updateSeriesCommandHandler, RemoveSeriesCommandHandler removeSeriesCommandHandler)
+        public SeriesesController(GetSeriesByIdQueryHandler getSeriesByIdQueryHandler, GetSeriesQueryHandler getSeriesQueryHandler, CreateSeriesCommandHandler createSeriesCommandHandler, UpdateSeriesCommandHandler updateSeriesCommandHandler, RemoveSeriesCommandHandler removeSeriesCommandHandler, GetSeriesWithCategoryQueryHandler getSeriesWithCategoryQueryHandler)
         {
             _getSeriesByIdQueryHandler = getSeriesByIdQueryHandler;
             _getSeriesQueryHandler = getSeriesQueryHandler;
             _createSeriesCommandHandler = createSeriesCommandHandler;
             _updateSeriesCommandHandler = updateSeriesCommandHandler;
             _removeSeriesCommandHandler = removeSeriesCommandHandler;
+            _getSeriesWithCategoryQueryHandler = getSeriesWithCategoryQueryHandler;
         }
 
         [HttpGet]
@@ -58,6 +60,13 @@ namespace SeriesApi.WebApi.Controllers
         {
             await _updateSeriesCommandHandler.Handle(command);
             return Ok("Dizi güncelleme işlemi başarılı");
+        }
+
+        [HttpGet("GetSeriesWithCategory")]
+        public async Task<IActionResult> GetSeriesWithCategory()
+        {
+            var values = await _getSeriesWithCategoryQueryHandler.Handle();
+            return Ok(values);
         }
     }
 }

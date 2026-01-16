@@ -1,232 +1,203 @@
 ﻿@model List<AdminResultSeriesDto>
 
 @{
-    ViewData["Title"] = "SeriesList";
+    ViewData["Title"] = "Dizi Listesi";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-
-
 <style>
-    :root {
-        --primary: #6366f1;
-        --success: #10b981;
-        --danger: #ef4444;
-        --warning: #f59e0b;
-        --bg-soft: #f8fafc;
-        --text-dark: #1f2937;
-        --text-muted: #6b7280;
-        --radius: 12px;
-    }
-
-    .admin-card {
-        background: #fff;
-        border-radius: var(--radius);
-        padding: 24px;
-        box-shadow: 0 8px 24px rgba(0,0,0,.04);
-    }
-
-    .admin-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        gap: 16px;
-        flex-wrap: wrap;
-    }
-
-    .admin-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .admin-search {
-        position: relative;
-        max-width: 320px;
-        width: 100%;
-    }
-
-        .admin-search input {
-            width: 100%;
-            padding: 10px 14px 10px 40px;
-            border-radius: var(--radius);
-            border: 1px solid #e5e7eb;
-            background: var(--bg-soft);
-        }
-
-        .admin-search ion-icon {
-            position: absolute;
-            top: 50%;
-            left: 12px;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 18px;
-        }
-
-    .btn-primary-soft {
-        background: var(--primary);
-        color: #fff;
-        padding: 10px 18px;
-        border-radius: var(--radius);
-        font-weight: 600;
+    .category-badge {
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        text-decoration: none;
+        transition: all 0.2s ease;
     }
 
-    .movie-table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0 8px;
-    }
-
-        .movie-table thead th {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            padding: 8px 12px;
+        .category-badge ion-icon {
+            font-size: 16px;
         }
 
-        .movie-table tbody tr {
-            background: #fff;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 10px rgba(0,0,0,.03);
+        .category-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .movie-table tbody td {
-            padding: 14px 12px;
-            vertical-align: middle;
-            color: var(--text-dark);
-        }
-
-    .movie-id {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: var(--primary);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
+    /* Kategori Renkleri */
+    .cat-komedi {
+        background: rgba(251, 191, 36, 0.15);
+        color: #f59e0b;
     }
 
-    .rating-pill {
-        background: #fef3c7;
-        color: #92400e;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 13px;
-        display: inline-flex;
-        gap: 4px;
-        align-items: center;
+    .cat-dram {
+        background: rgba(236, 72, 153, 0.15);
+        color: #ec4899;
     }
 
-    .status-pill {
-        padding: 6px 12px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 700;
+    .cat-serüven {
+        background: rgba(34, 197, 94, 0.15);
+        color: #22c55e;
     }
 
-        .status-pill.active {
-            background: #ecfdf5;
-            color: #065f46;
-        }
-
-        .status-pill.passive {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-    .action-btn {
-        padding: 8px 14px;
-        border-radius: var(--radius);
-        font-weight: 600;
-        font-size: 13px;
-        text-decoration: none;
-        color: #fff;
+    .cat-animasyon {
+        background: rgba(168, 85, 247, 0.15);
+        color: #a855f7;
     }
 
-    .btn-delete {
-        background: var(--danger);
+    .cat-macera {
+        background: rgba(14, 165, 233, 0.15);
+        color: #0ea5e9;
     }
 
-    .btn-update {
-        background: var(--success);
+    .cat-belgesel {
+        background: rgba(156, 163, 175, 0.15);
+        color: #6b7280;
     }
 
-    .btn-detail {
-        background: var(--warning);
+    .cat-gerilim {
+        background: rgba(139, 92, 246, 0.15);
+        color: #8b5cf6;
     }
 
-    @@media(max - width:768px) {
-        .movie-table thead {
-            display: none;
-        }
+    .cat-korku {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+    }
+
+    .cat-bilimkurgu {
+        background: rgba(59, 130, 246, 0.15);
+        color: #3b82f6;
+    }
+
+    .cat-müzikal {
+        background: rgba(244, 114, 182, 0.15);
+        color: #f472b6;
+    }
+
+    .cat-anime {
+        background: rgba(217, 70, 239, 0.15);
+        color: #d946ef;
+    }
+
+    .cat-aksiyon {
+        background: rgba(220, 38, 38, 0.15);
+        color: #dc2626;
+    }
+
+    .cat-romantik {
+        background: rgba(251, 113, 133, 0.15);
+        color: #fb7185;
+    }
+
+    .cat-savaş {
+        background: rgba(75, 85, 99, 0.15);
+        color: #4b5563;
+    }
+
+    .cat-spor {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
     }
 </style>
 
-<div class="admin-card">
-    <div class="admin-header">
-        <div class="admin-title">
-            🎬 Dizi Listesi
-        </div>
+<div class="cinema-shell">
+    <div class="cinema-topbar">
+        <div class="d-flex align-items-start align-items-md-center justify-content-between gap-3 flex-column flex-md-row">
+            <div>
+                <h5 class="cinema-title">
+                    <span class="badge-dot"></span>
+                    Dizi Yönetim Paneli
+                </h5>
+                <div class="cinema-sub">Katalog, durum ve içerik yönetimi • sinematik görünüm</div>
+            </div>
 
-        <div class="admin-search">
-            <ion-icon name="search-outline"></ion-icon>
-            <input type="text" placeholder="Dizi ara..." />
-        </div>
+            <div class="cinema-actions">
+                <div class="cinema-search">
+                    <span class="search-icon">
+                        <ion-icon name="search-sharp"></ion-icon>
+                    </span>
+                    <input class="form-control" type="text" placeholder="Dizi ara (adı, yıl, reyting)...">
+                </div>
 
-        <a href="/Admin/AdminSeries/CreateSeries/" class="btn-primary-soft">
-            <ion-icon name="add-circle-outline"></ion-icon>
-            Yeni Dizi
-        </a>
+                <a href="/Admin/AdminSeries/CreateSeries/" class="btn-cinema btn-cinema-primary">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    Yeni Dizi Ekle
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="table-responsive">
-        <table class="movie-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Dizi Adı</th>
-                    <th>Rating</th>
-                    <th>Yıl</th>
-                    <th>Durum</th>
-                    <th>Sil</th>
-                    <th>Güncelle</th>
-                    <th>Detay</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    count++;
+    <div class="cinema-body">
+        <div class="table-responsive">
+            <table class="cinema-table">
+                <thead>
                     <tr>
-                        <td><div class="movie-id">@count</div></td>
-                        <td><strong>@item.Title</strong></td>
-                        <td>
-                            <span class="rating-pill">
-                                ⭐ @item.Rating
-                            </span>
-                        </td>
-                        <td>@item.CreatedYear</td>
-                        <td>@item.Status</td>
-                        <td><a href="#" class="action-btn btn-delete">Sil</a></td>
-                        <td><a href="#" class="action-btn btn-update">Güncelle</a></td>
-                        <td><a href="#" class="action-btn btn-detail">Detay</a></td>
+                        <th>#</th>
+                        <th>Dizi Adı</th>
+                        <th>Reyting</th>
+                        <th>Yıl</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+
+                        var statusText = item.Status.ToString() ?? "";
+                        var isActive = statusText.Equals("True", StringComparison.OrdinalIgnoreCase) || statusText == "1";
+
+                        <tr class="cinema-row">
+                            <td>@count</td>
+
+                            <td>
+                                <div class="movie-title">
+                                    @item.Title
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="rating-badge">
+                                    <ion-icon name="star"></ion-icon>
+                                    @item.Rating
+                                </span>
+                            </td>
+
+                            <td class="muted">@item.CreatedYear</td>
+
+                            <td>
+                                <span class="pill @(isActive ? "on" : "off")">
+                                    <span class="dot"></span>
+                                    @(isActive ? "Yayında" : "Taslak")
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <a href="javascript:;" class="btn-mini btn-mini-danger">
+                                        <ion-icon name="trash-outline"></ion-icon>
+                                        Sil
+                                    </a>
+                                    <a href="javascript:;" class="btn-mini btn-mini-warning">
+                                        <ion-icon name="create-outline"></ion-icon>
+                                        Güncelle
+                                    </a>
+                                    <a href="javascript:;" class="btn-mini btn-mini-primary">
+                                        <ion-icon name="information-circle-outline"></ion-icon>
+                                        Detaylar
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
-
