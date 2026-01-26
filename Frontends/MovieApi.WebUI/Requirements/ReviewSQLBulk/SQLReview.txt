@@ -1,0 +1,53 @@
+﻿CREATE TABLE dbo.Reviews_Staging
+(
+    ReviewComment NVARCHAR(MAX),
+    UserRating TINYINT,
+    ReviewDate DATE,
+    Status BIT,
+    UserId NVARCHAR(450),
+    IsSpoiler BIT,
+    LikeCount INT,
+    MovieId INT,
+    SentimentScore DECIMAL(18,2) NULL
+);
+
+
+----------------------------------------------------
+
+
+BULK INSERT dbo.Reviews_Staging
+FROM 'C:\Users\Murat\Desktop\reviews_5000.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '0x0a',
+    CODEPAGE = '65001',
+    TABLOCK
+);
+
+
+------------------------------------------------------
+
+INSERT INTO dbo.Reviews
+(
+    ReviewComment,
+    UserRating,
+    ReviewDate,
+    Status,
+    UserId,
+    IsSpoiler,
+    LikeCount,
+    MovieId,
+    SentimentScore
+)
+SELECT
+    ReviewComment,
+    UserRating,
+    ReviewDate,
+    Status,
+    UserId,
+    IsSpoiler,
+    LikeCount,
+    MovieId,
+    SentimentScore
+FROM dbo.Reviews_Staging;
