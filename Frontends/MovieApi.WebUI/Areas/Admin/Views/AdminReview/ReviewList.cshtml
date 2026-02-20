@@ -1,0 +1,572 @@
+﻿@model List<ResultAdminReviewDto>
+
+@{
+    ViewData["Title"] = "ReviewList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    int totalCount = ViewBag.TotalCount ?? 0;
+    int pageSize = ViewBag.PageSize ?? 10;
+}
+
+
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+    :root {
+        --bg: #0a0a0a;
+        --surface: #141414;
+        --surface2: #1c1c1c;
+        --border: #2a2a2a;
+        --red: #e50914;
+        --red-dim: #8b0000;
+        --text: #f0f0f0;
+        --muted: #808080;
+        --success: #2ecc71;
+        --warning: #f39c12;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    .page-wrapper {
+        padding: 40px 48px;
+        min-height: 100vh;
+        background:
+            radial-gradient(ellipse 80% 40% at 50% -10%, rgba(229,9,20,0.12) 0%, transparent 70%),
+            var(--bg);
+    }
+
+    /* Header */
+    .page-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 36px;
+    }
+
+    .page-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 52px;
+        letter-spacing: 3px;
+        line-height: 1;
+        color: var(--text);
+    }
+
+    .page-title span {
+        color: var(--red);
+    }
+
+    .header-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .total-badge {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 6px 14px;
+        font-size: 13px;
+        color: var(--muted);
+        letter-spacing: 0.5px;
+    }
+
+    .total-badge strong {
+        color: var(--red);
+        font-size: 15px;
+    }
+
+    /* Stats Row */
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 24px;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.2s;
+    }
+
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--red);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover::before { transform: scaleX(1); }
+    .stat-card:hover { border-color: #3a3a3a; }
+
+    .stat-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--muted);
+        margin-bottom: 8px;
+    }
+
+    .stat-value {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 38px;
+        letter-spacing: 1px;
+        color: var(--text);
+        line-height: 1;
+    }
+
+    .stat-value.red { color: var(--red); }
+
+    /* Table Container */
+    .table-container {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 28px;
+    }
+
+    .table-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface2);
+    }
+
+    .toolbar-left {
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .toolbar-left strong {
+        color: var(--text);
+    }
+
+    .page-size-select {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-family: 'DM Sans', sans-serif;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .page-size-select:focus { border-color: var(--red); }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    thead th {
+        padding: 14px 20px;
+        text-align: left;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--muted);
+        font-weight: 600;
+        border-bottom: 1px solid var(--border);
+        white-space: nowrap;
+        background: var(--surface2);
+    }
+
+    thead th:first-child { color: var(--red); }
+
+    tbody tr {
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        transition: background 0.15s;
+        animation: rowIn 0.3s ease both;
+    }
+
+    @@keyframes rowIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    tbody tr:nth-child(1) { animation-delay: 0.02s; }
+    tbody tr:nth-child(2) { animation-delay: 0.04s; }
+    tbody tr:nth-child(3) { animation-delay: 0.06s; }
+    tbody tr:nth-child(4) { animation-delay: 0.08s; }
+    tbody tr:nth-child(5) { animation-delay: 0.10s; }
+    tbody tr:nth-child(6) { animation-delay: 0.12s; }
+    tbody tr:nth-child(7) { animation-delay: 0.14s; }
+    tbody tr:nth-child(8) { animation-delay: 0.16s; }
+    tbody tr:nth-child(9) { animation-delay: 0.18s; }
+    tbody tr:nth-child(10) { animation-delay: 0.20s; }
+
+    tbody tr:hover { background: rgba(255,255,255,0.03); }
+    tbody tr:last-child { border-bottom: none; }
+
+    td {
+        padding: 14px 20px;
+        vertical-align: middle;
+        color: var(--text);
+    }
+
+    .id-cell {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 18px;
+        color: var(--red);
+        letter-spacing: 1px;
+        width: 60px;
+    }
+
+    .comment-cell {
+        max-width: 320px;
+    }
+
+    .comment-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 300px;
+        color: #ccc;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Rating Stars */
+    .rating-cell { white-space: nowrap; }
+
+    .stars {
+        display: inline-flex;
+        gap: 2px;
+    }
+
+    .star {
+        font-size: 13px;
+        color: var(--border);
+    }
+
+    .star.filled { color: #f5c518; }
+
+    /* Date Cell */
+    .date-cell {
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+    }
+
+    .date-main { color: var(--text); font-size: 13px; }
+
+    /* Badges */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+    }
+
+    .badge-active {
+        background: rgba(46, 204, 113, 0.12);
+        color: var(--success);
+        border: 1px solid rgba(46, 204, 113, 0.25);
+    }
+
+    .badge-inactive {
+        background: rgba(255,255,255,0.05);
+        color: var(--muted);
+        border: 1px solid var(--border);
+    }
+
+    .badge-spoiler {
+        background: rgba(229, 9, 20, 0.12);
+        color: #ff6b6b;
+        border: 1px solid rgba(229, 9, 20, 0.25);
+    }
+
+    .badge-safe {
+        background: rgba(255,255,255,0.04);
+        color: var(--muted);
+        border: 1px solid var(--border);
+    }
+
+    /* Pagination */
+    .pagination-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4px;
+    }
+
+    .pagination-info {
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .pagination-info strong { color: var(--text); }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--muted);
+        font-size: 13px;
+        font-family: 'DM Sans', sans-serif;
+        text-decoration: none;
+        transition: all 0.15s;
+        cursor: pointer;
+    }
+
+    .page-btn:hover {
+        border-color: var(--red);
+        color: var(--text);
+        background: rgba(229,9,20,0.08);
+    }
+
+    .page-btn.active {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .page-btn.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .page-dots {
+        color: var(--muted);
+        padding: 0 4px;
+        font-size: 13px;
+    }
+
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 80px 20px;
+        color: var(--muted);
+    }
+
+    .empty-state .empty-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+        opacity: 0.3;
+    }
+
+    .empty-state p { font-size: 15px; }
+</style>
+
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1 class="page-title">YORUM <span>YÖNETİMİ</span></h1>
+        <div class="header-meta">
+            <div class="total-badge">Toplam <strong>@totalCount.ToString("N0")</strong> yorum</div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    @if (Model != null && Model.Any())
+    {
+        var activeCount = Model.Count(x => x.Status);
+        var spoilerCount = Model.Count(x => x.IsSpoiler);
+        var avgRating = Model.Average(x => (double)x.UserRating);
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-label">Bu Sayfada</div>
+                <div class="stat-value">@Model.Count</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Aktif</div>
+                <div class="stat-value red">@activeCount</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Spoiler</div>
+                <div class="stat-value">@spoilerCount</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Ort. Puan</div>
+                <div class="stat-value">@avgRating.ToString("F1")</div>
+            </div>
+        </div>
+    }
+
+    <!-- Table -->
+    <div class="table-container">
+        <div class="table-toolbar">
+            <div class="toolbar-left">
+                Sayfa <strong>@currentPage</strong> / <strong>@totalPages</strong>
+            </div>
+            <div>
+                <label style="font-size:12px; color:var(--muted); margin-right:8px;">Sayfa başı:</label>
+                <select class="page-size-select" onchange="changePageSize(this.value)">
+                    <option value="10" @@(pageSize == 10 ? "selected" : "")>10</option>
+                    <option value="25" @@(pageSize= =25 ? "selected" : "" )>25</option>
+                    <option value="50" @@(pageSize= =50 ? "selected" : "" )>50</option>
+                </select>
+            </div>
+        </div>
+
+        @if (Model == null || !Model.Any())
+        {
+            <div class="empty-state">
+                <div class="empty-icon">🎬</div>
+                <p>Henüz yorum bulunamadı.</p>
+            </div>
+        }
+        else
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Yorum</th>
+                        <th>Puan</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                        <th>Spoiler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="id-cell">@item.ReviewId</td>
+                            <td class="comment-cell">
+                                <div class="comment-text" title="@item.ReviewComment">@item.ReviewComment</div>
+                            </td>
+                            <td class="rating-cell">
+                                <div class="stars">
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <span class="star @(i <= item.UserRating ? "filled" : "")">★</span>
+                                    }
+                                </div>
+                            </td>
+                            <td class="date-cell">
+                                <div class="date-main">@item.ReviewDate.ToString("dd MMM yyyy")</div>
+                            </td>
+                            <td>
+                                @if (item.Status)
+                                {
+                                    <span class="badge badge-active">● Aktif</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-inactive">○ Pasif</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.IsSpoiler)
+                                {
+                                    <span class="badge badge-spoiler">⚠ Spoiler</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-safe">✓ Temiz</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-wrapper">
+        <div class="pagination-info">
+            @{
+                int startItem = (currentPage - 1) * pageSize + 1;
+                int endItem = Math.Min(currentPage * pageSize, totalCount);
+            }
+            <strong>@startItem</strong> – <strong>@endItem</strong> arası gösteriliyor
+        </div>
+
+        <div class="pagination">
+            <!-- Prev -->
+            @if (currentPage > 1)
+            {
+                <a class="page-btn" href="?page=@(currentPage - 1)&pageSize=@pageSize">‹</a>
+            }
+            else
+            {
+                <span class="page-btn disabled">‹</span>
+            }
+
+            @{
+                int startPage = Math.Max(1, currentPage - 2);
+                int endPage = Math.Min(totalPages, currentPage + 2);
+            }
+
+            @if (startPage > 1)
+            {
+                <a class="page-btn" href="?page=1&pageSize=@pageSize">1</a>
+                @if (startPage > 2) { <span class="page-dots">···</span> }
+            }
+
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                <a class="page-btn @(i == currentPage ? "active" : "")" href="?page=@i&pageSize=@pageSize">@i</a>
+            }
+
+            @if (endPage < totalPages)
+            {
+                @if (endPage < totalPages - 1) { <span class="page-dots">···</span> }
+                <a class="page-btn" href="?page=@totalPages&pageSize=@pageSize">@totalPages</a>
+            }
+
+            <!-- Next -->
+            @if (currentPage < totalPages)
+            {
+                <a class="page-btn" href="?page=@(currentPage + 1)&pageSize=@pageSize">›</a>
+            }
+            else
+            {
+                <span class="page-btn disabled">›</span>
+            }
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function changePageSize(size) {
+        window.location.href = `?page=1&pageSize=${size}`;
+    }
+</script>
+
